@@ -37,22 +37,21 @@ https://graphql.datocms.com/preview`
   return client.request(query, variables);
 }
 
-const HOMEPAGE_QUERY = `query HomePage {
-  home {
-    profilePicture {
-      responsiveImage(imgixParams: { fit: crop, w: 100, h: 100, auto: format }) {
-        ...responsiveImageFragment
-      }
-    }
-  }
-}
-
-${responsiveImageFragment}
-`;
-
 export const getHomeData = async () => {
   const data = await request({
-    query: HOMEPAGE_QUERY,
+    query: `
+      query HomePage {
+        home {
+          profilePicture {
+            responsiveImage(imgixParams: { fit: crop, w: 100, h: 100, auto: format }) {
+              ...responsiveImageFragment
+            }
+          }
+        }
+      }
+
+      ${responsiveImageFragment}
+      `,
   });
   return data?.home;
 };
