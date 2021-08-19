@@ -45,7 +45,10 @@ const HOMEPAGE_QUERY = `query HomePage {
       }
     }
   }
-}`;
+}
+
+${responsiveImageFragment}
+`;
 
 export const getHomeData = async () => {
   const data = await request({
