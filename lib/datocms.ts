@@ -16,3 +16,29 @@ export function request({ query, variables, preview }: RequestParams) {
   });
   return client.request(query, variables);
 }
+
+const HOMEPAGE_QUERY = `query HomePage {
+  home {
+    profilePicture {
+      responsiveImage(imgixParams: { fit: crop, w: 100, h: 100, auto: format }) {
+        srcSet
+        webpSrcSet
+        sizes
+        src
+        width
+        height
+        aspectRatio
+        alt
+        title
+        base64
+      }
+    }
+  }
+}`;
+
+export const getHomeData = async() => {
+  const data = await request({
+    query: HOMEPAGE_QUERY,
+  });
+  return data?.home;
+}

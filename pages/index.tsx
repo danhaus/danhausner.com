@@ -1,33 +1,13 @@
 import type { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
 import { Box, Heading, Text } from '@chakra-ui/react';
-import { request } from '../lib/datocms';
+import {getHomeData} from '../lib/datocms';
 import { Image, ResponsiveImageType } from 'react-datocms';
 
-const HOMEPAGE_QUERY = `query HomePage {
-  home {
-    profilePicture {
-      responsiveImage(imgixParams: { fit: crop, w: 100, h: 100, auto: format }) {
-        srcSet
-        webpSrcSet
-        sizes
-        src
-        width
-        height
-        aspectRatio
-        alt
-        title
-        base64
-      }
-    }
-  }
-}`;
+
 
 export const getStaticProps: GetStaticProps = async () => {
-  const data = await request({
-    query: HOMEPAGE_QUERY,
-  });
-  const homeData = data?.home;
+  const homeData = await getHomeData();
   return {
     props: { homeData },
   };
