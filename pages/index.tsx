@@ -1,10 +1,8 @@
 import type { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
 import { Box, Heading, Text } from '@chakra-ui/react';
-import {getHomeData} from '../lib/datocms';
+import { getHomeData } from '../lib/datocms';
 import { Image, ResponsiveImageType } from 'react-datocms';
-
-
 
 export const getStaticProps: GetStaticProps = async () => {
   const homeData = await getHomeData();
@@ -18,12 +16,12 @@ interface HomeProps {
     profilePicture: {
       responsiveImage: ResponsiveImageType;
     };
-  }
+  };
 }
 
 const Home: NextPage<HomeProps> = ({ homeData }) => {
   // console.log(JSON.stringify(home));
-  const {profilePicture} = homeData;
+  const { profilePicture } = homeData;
   return (
     <Box bg="rgba(247, 235, 212, 1)" h="100vh">
       <Head>
