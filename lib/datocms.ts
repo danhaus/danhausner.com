@@ -1,6 +1,8 @@
 import { GraphQLClient } from 'graphql-request';
 import { RequestDocument, Variables } from 'graphql-request/dist/types';
 
+export const PROFILE_PIC_SIZE = '120'; // px
+
 // See: https://www.datocms.com/blog/offer-responsive-progressive-lqip-images-in-2020
 const responsiveImageFragment = `
   fragment responsiveImageFragment on ResponsiveImage {
@@ -43,7 +45,7 @@ export const getHomeData = async () => {
       query HomePage {
         home {
           profilePicture {
-            responsiveImage(imgixParams: { fit: crop, w: 100, h: 100, auto: format }) {
+            responsiveImage(imgixParams: { fit: crop, w: ${PROFILE_PIC_SIZE}, h: ${PROFILE_PIC_SIZE}, auto: format }) {
               ...responsiveImageFragment
             }
           }
