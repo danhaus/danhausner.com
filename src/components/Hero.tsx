@@ -25,7 +25,7 @@ const Hero = ({ profilePicture }: HeroProps) => {
         </Heading>
         <Heading fontSize="2.35rem">HAUSNER</Heading>
         <Heading as={'h1'} fontWeight="medium" fontSize="xl">
-          I bring ideas to live with web technologies.
+          I bring ideas to life with web technologies.
         </Heading>
       </Box>
     </HStack>
