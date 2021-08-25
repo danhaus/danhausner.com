@@ -13,7 +13,7 @@ interface HeroProps {
 const Hero = ({ profilePicture }: HeroProps) => {
   const ref = use100vh();
   return (
-    <HStack ref={ref}>
+    <HStack ref={ref} justify="center">
       <Box minW={`${PROFILE_PIC_SIZE}px`}>
         {/* eslint-disable-next-line jsx-a11y/alt-text */}
         <Image data={profilePicture.responsiveImage} pictureStyle={{ transform: 'rotate(15deg)' }} />{' '}
