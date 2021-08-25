@@ -24,7 +24,7 @@ const Home: NextPage<HomeProps> = ({ homeData }) => {
   // console.log(JSON.stringify(home));
   const { profilePicture } = homeData;
   return (
-    <Box bg="rgba(247, 235, 212, 1)" h="100vh">
+    <Box bg="rgba(247, 235, 212, 1)">
       <Head>
         <title>I{"'"}m Daniel Hausner</title>
         <meta name="description" content="I'm Daniel Hausner, fullstack web developer." />
