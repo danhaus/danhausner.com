@@ -1,4 +1,4 @@
-import { Box } from '@chakra-ui/react';
+import { Container } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 
 interface LayoutProps {
@@ -7,10 +7,10 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps) => {
   return (
-    <Box>
+    <Container>
       <main>{children}</main>
       <footer>Placeholder for footer.</footer>
-    </Box>
+    </Container>
   );
 };
 
