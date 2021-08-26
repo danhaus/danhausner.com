@@ -1,6 +1,6 @@
 import type { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
-import { Box, Text } from '@chakra-ui/react';
+import { Text } from '@chakra-ui/react';
 import { getHomeData } from '../lib/datocms';
 import { ResponsiveImageType } from 'react-datocms';
 import Hero from '../components/Hero';
@@ -24,7 +24,7 @@ const Home: NextPage<HomeProps> = ({ homeData }) => {
   // console.log(JSON.stringify(home));
   const { profilePicture } = homeData;
   return (
-    <Box bg="rgba(247, 235, 212, 1)">
+    <>
       <Head>
         <title>I{"'"}m Daniel Hausner</title>
         <meta name="description" content="I'm Daniel Hausner, fullstack web developer." />
@@ -49,9 +49,7 @@ const Home: NextPage<HomeProps> = ({ homeData }) => {
         and climbing. I also do calisthenics and run regularly — currently training for a marathon.
       </Text>
       <br />
-
-      <footer>Placeholder for footer.</footer>
-    </Box>
+    </>
   );
 };
 
