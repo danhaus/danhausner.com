@@ -4,6 +4,7 @@ import { Text } from '@chakra-ui/react';
 import { getHomeData } from '../lib/datocms';
 import { ResponsiveImageType } from 'react-datocms';
 import Hero from '../components/Hero';
+import Section from '../components/Section';
 
 export const getStaticProps: GetStaticProps = async () => {
   const homeData = await getHomeData();
@@ -33,22 +34,23 @@ const Home: NextPage<HomeProps> = ({ homeData }) => {
 
       <Hero profilePicture={profilePicture} />
 
-      <Text>Hello world! Full-stack web developer here!</Text>
-      <br />
-      <Text>
-        I enjoy spending my mornings with challenging work on the backend, and afternoons with visually-pleasing
-        frontend.
-      </Text>
-      <br />
-      <Text>
-        <em>I don&apos;t drink coffee — I&apos;m powered by passion.</em>
-      </Text>
-      <br />
-      <Text>
-        I&apos;m a digital nomad. In my downtime, I thrive on being outdoors — I especially like mountaineering, hiking,
-        and climbing. I also do calisthenics and run regularly — currently training for a marathon.
-      </Text>
-      <br />
+      <Section>
+        <Text>Hello world! Full-stack web developer here!</Text>
+        <br />
+        <Text>
+          I enjoy spending my mornings with challenging work on the backend, and afternoons with visually-pleasing
+          frontend.
+        </Text>
+        <br />
+        <Text>
+          <em>I don&apos;t drink coffee — I&apos;m powered by passion.</em>
+        </Text>
+        <br />
+        <Text>
+          I&apos;m a digital nomad. In my downtime, I thrive on being outdoors — I especially like mountaineering,
+          hiking, and climbing. I also do calisthenics and run regularly — currently training for a marathon.
+        </Text>
+      </Section>
     </>
   );
 };
