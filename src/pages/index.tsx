@@ -1,6 +1,6 @@
 import type { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
-import { Box } from '@chakra-ui/react';
+import { Box, Text } from '@chakra-ui/react';
 import { getHomeData } from '../lib/datocms';
 import { ResponsiveImageType } from 'react-datocms';
 import Hero from '../components/Hero';
@@ -32,6 +32,23 @@ const Home: NextPage<HomeProps> = ({ homeData }) => {
       </Head>
 
       <Hero profilePicture={profilePicture} />
+
+      <Text>Hello world! Full-stack web developer here!</Text>
+      <br />
+      <Text>
+        I enjoy spending my mornings with challenging work on the backend, and afternoons with visually-pleasing
+        frontend.
+      </Text>
+      <br />
+      <Text>
+        <em>I don&apos;t drink coffee — I&apos;m powered by passion.</em>
+      </Text>
+      <br />
+      <Text>
+        I&apos;m a digital nomad. In my downtime, I thrive on being outdoors — I especially like mountaineering, hiking,
+        and climbing. I also do calisthenics and run regularly — currently training for a marathon.
+      </Text>
+      <br />
 
       <footer>Placeholder for footer.</footer>
     </Box>
