@@ -8,7 +8,7 @@ interface LayoutProps {
 const Layout = ({ children }: LayoutProps) => {
   return (
     <Box bg="rgba(247, 235, 212, 1)">
-      {children}
+      <main>{children}</main>
       <footer>Placeholder for footer.</footer>
     </Box>
   );
