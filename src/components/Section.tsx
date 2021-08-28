@@ -1,17 +1,15 @@
-import { ReactNode } from 'react';
-import { Heading } from '@chakra-ui/react';
+import { Box, BoxProps, Heading } from '@chakra-ui/react';
 
-interface SectionProps {
+interface SectionProps extends BoxProps {
   heading?: string;
-  children: ReactNode;
 }
 
-const Section = ({ heading, children }: SectionProps) => {
+const Section = ({ heading, children, ...rest }: SectionProps) => {
   return (
-    <section>
-      {heading && <Heading>{heading}</Heading>}
+    <Box as="section" {...rest}>
+      {heading && <Heading mb={4}>{heading}</Heading>}
       {children}
-    </section>
+    </Box>
   );
 };
 
