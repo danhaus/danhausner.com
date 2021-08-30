@@ -79,7 +79,7 @@ const Home: NextPage<HomeProps> = ({ homeData }) => {
           </ListItem>
         </UnorderedList>
         <br />
-        <Text>🚴‍♂️ Did competitive cycling for most of my secondary schoo</Text>
+        <Text>🚴‍♂️ Did competitive cycling for most of my secondary school</Text>
         <br />
       </Section>
     </>
