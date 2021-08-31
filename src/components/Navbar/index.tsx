@@ -14,7 +14,6 @@ import {
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import DesktopNav from './DesktopNav';
-// import MobileNav from './MobileNav';
 import React from 'react';
 import SidebarContent from './SidebarContent';
 
@@ -55,8 +54,6 @@ const Navbar = () => {
       </Flex>
 
       <Collapse in={isOpen} animateOpacity>
-        {/*<MobileNav />*/}
-
         <Drawer
           autoFocus={false}
           isOpen={isOpen}
