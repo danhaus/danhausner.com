@@ -1,9 +1,8 @@
 // Adapted & modified from https://chakra-templates.dev/navigation/sidebar
 
-import { Box, BoxProps, CloseButton, Flex, FlexProps, Icon, Link, Text, useColorModeValue } from '@chakra-ui/react';
+import { Box, BoxProps, CloseButton, Flex, FlexProps, Link, Text, useColorModeValue } from '@chakra-ui/react';
 import React, { ReactText } from 'react';
-import { IconType } from 'react-icons';
-import { LinkItems } from './index';
+import { NAV_ITEMS } from './index';
 
 interface SidebarProps extends BoxProps {
   onClose: () => void;
@@ -26,21 +25,18 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
         </Text>
         <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
       </Flex>
-      {LinkItems.map((link) => (
-        <NavItem key={link.name} icon={link.icon}>
-          {link.name}
-        </NavItem>
+      {NAV_ITEMS.map((navItem) => (
+        <NavItem key={navItem.label}>{navItem.label}</NavItem>
       ))}
     </Box>
   );
 };
 
 interface NavItemProps extends FlexProps {
-  icon: IconType;
   children: ReactText;
 }
 
-const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
+const NavItem = ({ children, ...rest }: NavItemProps) => {
   return (
     <Link href="#" style={{ textDecoration: 'none' }}>
       <Flex
@@ -56,16 +52,6 @@ const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
         }}
         {...rest}
       >
-        {icon && (
-          <Icon
-            mr="4"
-            fontSize="16"
-            _groupHover={{
-              color: 'white',
-            }}
-            as={icon}
-          />
-        )}
         {children}
       </Flex>
     </Link>

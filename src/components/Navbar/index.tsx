@@ -16,8 +16,6 @@ import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import DesktopNav from './DesktopNav';
 // import MobileNav from './MobileNav';
 import React from 'react';
-import { IconType } from 'react-icons';
-import { FiCompass, FiHome, FiSettings, FiStar, FiTrendingUp } from 'react-icons/fi';
 import SidebarContent from './SidebarContent';
 
 const Navbar = () => {
@@ -78,19 +76,6 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-export interface LinkItemProps {
-  name: string;
-  icon: IconType;
-}
-
-export const LinkItems: Array<LinkItemProps> = [
-  { name: 'Home', icon: FiHome },
-  { name: 'Trending', icon: FiTrendingUp },
-  { name: 'Explore', icon: FiCompass },
-  { name: 'Favourites', icon: FiStar },
-  { name: 'Settings', icon: FiSettings },
-];
 
 export interface NavItem {
   label: string;
