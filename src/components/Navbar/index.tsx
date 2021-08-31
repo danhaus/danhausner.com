@@ -23,7 +23,8 @@ const Navbar = () => {
   return (
     <Box as="nav" position="fixed" w="100vw">
       <Flex
-        bg={useColorModeValue('rgba(247, 235, 212, 0.92)', 'gray.800')}
+        bg={useColorModeValue('primary.light', 'gray.800')}
+        opacity={0.92}
         color={useColorModeValue('gray.600', 'white')}
         minH={'60px'}
         py={{ base: 2 }}
