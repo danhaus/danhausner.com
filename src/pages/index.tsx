@@ -5,6 +5,7 @@ import { getHomeData } from '../lib/datocms';
 import { ResponsiveImageType } from 'react-datocms';
 import Hero from '../components/Hero';
 import Section from '../components/Section';
+import { NavigationIds } from '../navigation/constants';
 
 export const getStaticProps: GetStaticProps = async () => {
   const homeData = await getHomeData();
@@ -52,7 +53,7 @@ const Home: NextPage<HomeProps> = ({ homeData }) => {
         </Text>
       </Section>
 
-      <Section heading="How I work" mt={8}>
+      <Section id={NavigationIds.HOW_I_WORK} heading="How I work" mt={8}>
         <Text>My work life is guided by efficiency, balance, and excellence.</Text>
         <br />
         <Text>
@@ -66,7 +67,7 @@ const Home: NextPage<HomeProps> = ({ homeData }) => {
         <Text>My preferred tech stack is React, Prisma, and TypeScript.</Text>
       </Section>
 
-      <Section heading="Random facts about me" mt={8}>
+      <Section id={NavigationIds.RANDOM_FACTS_ABOUT_ME} heading="Random facts about me" mt={8}>
         <Text>⛵️&nbsp;&nbsp;Won the World Robotic Sailing Championship</Text>
         <br />
         <Text>👨‍💻&nbsp;&nbsp;Have two technical degrees</Text>
