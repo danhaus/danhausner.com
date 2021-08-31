@@ -2,15 +2,15 @@
 
 import {
   Box,
-  Flex,
-  Text,
-  IconButton,
-  useColorModeValue,
-  useBreakpointValue,
-  useDisclosure,
-  DrawerContent,
   Drawer,
+  DrawerContent,
   DrawerOverlay,
+  Flex,
+  IconButton,
+  Text,
+  useBreakpointValue,
+  useColorModeValue,
+  useDisclosure,
 } from '@chakra-ui/react';
 import { HamburgerIcon } from '@chakra-ui/icons';
 import DesktopNav from './DesktopNav';
@@ -73,15 +73,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-export interface NavItem {
-  label: string;
-  href: string;
-}
-
-export const NAV_ITEMS: Array<NavItem> = [
-  {
-    label: 'How I work',
-    href: '#how-i-work',
-  },
-];

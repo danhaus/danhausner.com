@@ -2,8 +2,8 @@
 
 import { Box, BoxProps, CloseButton, Flex, FlexProps, Link, Text, useColorModeValue } from '@chakra-ui/react';
 import React, { ReactText } from 'react';
-import { NAV_ITEMS } from './index';
 import NextLink from 'next/link';
+import { NAV_ITEMS } from '../../constants';
 
 interface SidebarProps extends BoxProps {
   onClose: () => void;

@@ -1,6 +1,6 @@
 import { Box, Link, Stack, useColorModeValue } from '@chakra-ui/react';
-import { NAV_ITEMS } from './index';
 import NextLink from 'next/link';
+import { NAV_ITEMS } from '../../constants';
 
 const DesktopNav = () => {
   const linkColor = useColorModeValue('gray.600', 'gray.200');
