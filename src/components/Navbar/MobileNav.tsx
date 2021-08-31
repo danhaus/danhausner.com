@@ -8,7 +8,7 @@ interface SidebarProps extends BoxProps {
   onClose: () => void;
 }
 
-const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
+const MobileNav = ({ onClose, ...rest }: SidebarProps) => {
   return (
     <Box
       bg={useColorModeValue('white', 'gray.900')}
@@ -58,4 +58,4 @@ const NavItem = ({ children, ...rest }: NavItemProps) => {
   );
 };
 
-export default SidebarContent;
+export default MobileNav;

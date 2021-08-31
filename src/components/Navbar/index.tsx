@@ -15,7 +15,7 @@ import {
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import DesktopNav from './DesktopNav';
 import React from 'react';
-import SidebarContent from './SidebarContent';
+import MobileNav from './MobileNav';
 
 const Navbar = () => {
   const { isOpen, onToggle, onClose } = useDisclosure();
@@ -64,7 +64,7 @@ const Navbar = () => {
           size="full"
         >
           <DrawerContent>
-            <SidebarContent onClose={onClose} />
+            <MobileNav onClose={onClose} />
           </DrawerContent>
         </Drawer>
       </Collapse>
