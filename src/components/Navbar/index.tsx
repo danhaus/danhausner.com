@@ -9,13 +9,19 @@ import {
   useColorModeValue,
   useBreakpointValue,
   useDisclosure,
+  DrawerContent,
+  Drawer,
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import DesktopNav from './DesktopNav';
-import MobileNav from './MobileNav';
+// import MobileNav from './MobileNav';
+import React from 'react';
+import { IconType } from 'react-icons';
+import { FiCompass, FiHome, FiSettings, FiStar, FiTrendingUp } from 'react-icons/fi';
+import SidebarContent from './SidebarContent';
 
 const Navbar = () => {
-  const { isOpen, onToggle } = useDisclosure();
+  const { isOpen, onToggle, onClose } = useDisclosure();
 
   return (
     <Box as="nav" position="fixed" w="100vw">
@@ -51,13 +57,40 @@ const Navbar = () => {
       </Flex>
 
       <Collapse in={isOpen} animateOpacity>
-        <MobileNav />
+        {/*<MobileNav />*/}
+
+        <Drawer
+          autoFocus={false}
+          isOpen={isOpen}
+          placement="left"
+          onClose={onClose}
+          returnFocusOnClose={false}
+          onOverlayClick={onClose}
+          size="full"
+        >
+          <DrawerContent>
+            <SidebarContent onClose={onClose} />
+          </DrawerContent>
+        </Drawer>
       </Collapse>
     </Box>
   );
 };
 
 export default Navbar;
+
+export interface LinkItemProps {
+  name: string;
+  icon: IconType;
+}
+
+export const LinkItems: Array<LinkItemProps> = [
+  { name: 'Home', icon: FiHome },
+  { name: 'Trending', icon: FiTrendingUp },
+  { name: 'Explore', icon: FiCompass },
+  { name: 'Favourites', icon: FiStar },
+  { name: 'Settings', icon: FiSettings },
+];
 
 export interface NavItem {
   label: string;
