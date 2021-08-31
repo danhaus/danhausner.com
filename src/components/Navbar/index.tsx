@@ -76,23 +76,12 @@ export default Navbar;
 
 export interface NavItem {
   label: string;
-  subLabel?: string;
-  href?: string;
+  href: string;
 }
 
 export const NAV_ITEMS: Array<NavItem> = [
   {
-    label: 'Inspiration',
-  },
-  {
-    label: 'Find Work',
-  },
-  {
-    label: 'Learn Design',
-    href: '#',
-  },
-  {
-    label: 'Hire Designers',
-    href: '#',
+    label: 'How I work',
+    href: '#how-i-work',
   },
 ];

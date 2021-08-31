@@ -3,6 +3,7 @@
 import { Box, BoxProps, CloseButton, Flex, FlexProps, Link, Text, useColorModeValue } from '@chakra-ui/react';
 import React, { ReactText } from 'react';
 import { NAV_ITEMS } from './index';
+import NextLink from 'next/link';
 
 interface SidebarProps extends BoxProps {
   onClose: () => void;
@@ -26,7 +27,9 @@ const MobileNav = ({ onClose, ...rest }: SidebarProps) => {
         <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
       </Flex>
       {NAV_ITEMS.map((navItem) => (
-        <NavItem key={navItem.label}>{navItem.label}</NavItem>
+        <NavItem key={navItem.label} href={navItem.href}>
+          {navItem.label}
+        </NavItem>
       ))}
     </Box>
   );
@@ -34,27 +37,30 @@ const MobileNav = ({ onClose, ...rest }: SidebarProps) => {
 
 interface NavItemProps extends FlexProps {
   children: ReactText;
+  href: string;
 }
 
-const NavItem = ({ children, ...rest }: NavItemProps) => {
+const NavItem = ({ children, href, ...rest }: NavItemProps) => {
   return (
-    <Link href="#" style={{ textDecoration: 'none' }}>
-      <Flex
-        align="center"
-        p="4"
-        mx="4"
-        borderRadius="lg"
-        role="group"
-        cursor="pointer"
-        _hover={{
-          bg: 'cyan.400',
-          color: 'white',
-        }}
-        {...rest}
-      >
-        {children}
-      </Flex>
-    </Link>
+    <NextLink href={href} passHref>
+      <Link href="#" style={{ textDecoration: 'none' }}>
+        <Flex
+          align="center"
+          p="4"
+          mx="4"
+          borderRadius="lg"
+          role="group"
+          cursor="pointer"
+          _hover={{
+            bg: 'cyan.400',
+            color: 'white',
+          }}
+          {...rest}
+        >
+          {children}
+        </Flex>
+      </Link>
+    </NextLink>
   );
 };
 
