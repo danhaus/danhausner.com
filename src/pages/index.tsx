@@ -67,9 +67,9 @@ const Home: NextPage<HomeProps> = ({ homeData }) => {
       </Section>
 
       <Section heading="Random facts about me" mt={8}>
-        <Text>⛵️ Won the World Robotic Sailing Championship</Text>
+        <Text>⛵️&nbsp;&nbsp;Won the World Robotic Sailing Championship</Text>
         <br />
-        <Text>👨‍💻 Have two technical degrees</Text>
+        <Text>👨‍💻&nbsp;&nbsp;Have two technical degrees</Text>
         <UnorderedList listStylePos="inside">
           <ListItem>
             Computing Science MSc from <em>Imperial&nbsp;College&nbsp;London</em> (Distinction)
@@ -79,7 +79,7 @@ const Home: NextPage<HomeProps> = ({ homeData }) => {
           </ListItem>
         </UnorderedList>
         <br />
-        <Text>🚴‍♂️ Did competitive cycling for most of my secondary school</Text>
+        <Text>🚴‍♂️&nbsp;&nbsp;Did competitive cycling for most of my secondary school</Text>
         <br />
       </Section>
     </>
