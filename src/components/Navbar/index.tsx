@@ -5,12 +5,12 @@ import {
   Flex,
   Text,
   IconButton,
-  Collapse,
   useColorModeValue,
   useBreakpointValue,
   useDisclosure,
   DrawerContent,
   Drawer,
+  DrawerOverlay,
 } from '@chakra-ui/react';
 import { HamburgerIcon } from '@chakra-ui/icons';
 import DesktopNav from './DesktopNav';
@@ -53,21 +53,20 @@ const Navbar = () => {
         </Flex>
       </Flex>
 
-      <Collapse in={isOpen} animateOpacity>
-        <Drawer
-          autoFocus={false}
-          isOpen={isOpen}
-          placement="left"
-          onClose={onClose}
-          returnFocusOnClose={false}
-          onOverlayClick={onClose}
-          size="full"
-        >
-          <DrawerContent>
-            <MobileNav onClose={onClose} />
-          </DrawerContent>
-        </Drawer>
-      </Collapse>
+      <Drawer
+        autoFocus={false}
+        isOpen={isOpen}
+        placement="left"
+        onClose={onClose}
+        returnFocusOnClose={false}
+        onOverlayClick={onClose}
+        size="xs"
+      >
+        <DrawerContent>
+          <MobileNav onClose={onClose} />
+        </DrawerContent>
+        <DrawerOverlay style={{ background: 'rgb(0,0,0,0.3)', backdropFilter: 'blur(4px)' }} />
+      </Drawer>
     </Box>
   );
 };
