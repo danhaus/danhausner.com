@@ -36,7 +36,7 @@ const Home: NextPage<HomeProps> = ({ homeData }) => {
       <Hero profilePicture={profilePicture} />
 
       <Section>
-        <Text>Hello world! Full-stack web developer here!</Text>
+        <Text>Hello world! Full-stack web developer here with demonstrable phobia of spaghetti code.</Text>
         <br />
         <Text>
           I enjoy spending my mornings with challenging work on the backend, and afternoons with visually-pleasing
