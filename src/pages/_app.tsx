@@ -19,7 +19,10 @@ function MyApp({ Component, pageProps }: AppProps) {
         const id = hash.replace('#', '');
         const element = document.getElementById(id);
         if (element) {
-          element.scrollIntoView();
+          element.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+          });
         }
       }, 0);
     }
