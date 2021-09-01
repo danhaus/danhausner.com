@@ -25,15 +25,22 @@
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
     "framer-motion": "^4",
+    "graphql": "^15.5.1",
+    "graphql-request": "^3.5.0",
     "next": "11.1.0",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-datocms": "^1.6.3",
+    "react-dom": "17.0.2",
+    "react-use": "^17.2.4"
   },
   "devDependencies": {
     "@types/react": "17.0.18",
+    "@typescript-eslint/eslint-plugin": "4.29.3",
+    "@typescript-eslint/parser": "4.29.3",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.0",
     "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
     "husky": "^7.0.1",
     "lint-staged": "^11.1.2",
     "prettier": "2.3.2",

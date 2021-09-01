@@ -1,7 +1,10 @@
-/** @type {import('next').NextConfig} */
+/** @type {import("next").NextConfig} */
 module.exports = {
   reactStrictMode: true,
-  eslint: {
-    dirs: ['pages', 'components', 'lib'], // Only run ESLint on the these dirs
+  images: {
+    domains: ['www.datocms-assets.com'],
   },
-}
+  eslint: {
+    dirs: ['src'], // Only run ESLint on the these dirs
+  },
+};
