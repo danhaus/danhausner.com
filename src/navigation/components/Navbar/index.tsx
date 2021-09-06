@@ -16,6 +16,7 @@ import { HamburgerIcon } from '@chakra-ui/icons';
 import DesktopNav from './DesktopNav';
 import React from 'react';
 import MobileNav from './MobileNav';
+import { NAV_BAR_HEIGHT } from '../../constants';
 
 const Navbar = () => {
   const { isOpen, onToggle, onClose } = useDisclosure();
@@ -26,7 +27,7 @@ const Navbar = () => {
         bg={useColorModeValue('primary.light', 'gray.800')}
         opacity={0.92}
         color={useColorModeValue('gray.600', 'white')}
-        minH={'60px'}
+        h={`${NAV_BAR_HEIGHT}px`}
         py={{ base: 2 }}
         px={{ base: 4 }}
         align={'center'}

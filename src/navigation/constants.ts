@@ -1,3 +1,5 @@
+export const NAV_BAR_HEIGHT = 60; // px
+
 export interface NavItem {
   label: string;
   href: string;
