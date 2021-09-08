@@ -1,16 +1,15 @@
 // Adapted & modified from https://chakra-templates.dev/navigation/sidebar
 
-import { Box, BoxProps, CloseButton, Flex, FlexProps, Link, Text, useColorModeValue } from '@chakra-ui/react';
+import { Box, BoxProps, Flex, FlexProps, Link, useColorModeValue } from '@chakra-ui/react';
 import React, { ReactText } from 'react';
 import NextLink from 'next/link';
 import { NAV_ITEMS } from '../../constants';
 
 interface SidebarProps extends BoxProps {
-  onClose: () => void;
   visibleSection: string;
 }
 
-const MobileNav = ({ onClose, ...rest }: SidebarProps) => {
+const MobileNav = ({ ...rest }: SidebarProps) => {
   return (
     <Box
       bg={useColorModeValue('rgba(247, 235, 212, 1.0)', 'gray.900')}
@@ -21,12 +20,6 @@ const MobileNav = ({ onClose, ...rest }: SidebarProps) => {
       h="full"
       {...rest}
     >
-      <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
-        <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
-          Logo
-        </Text>
-        <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
-      </Flex>
       {NAV_ITEMS.map((navItem) => (
         <NavItem key={navItem.label} href={navItem.href}>
           {navItem.label}
