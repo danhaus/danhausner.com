@@ -6,16 +6,22 @@ export interface NavItem {
 }
 
 export enum NavigationIds {
+  INTRO = 'intro',
   HOW_I_WORK = 'how-i-work',
   RANDOM_FACTS_ABOUT_ME = 'random-facts-about-me',
 }
 
 export const NavigationAnchors = {
+  INTRO: `anchor-${NavigationIds.INTRO}`,
   HOW_I_WORK: `anchor-${NavigationIds.HOW_I_WORK}`,
   RANDOM_FACTS_ABOUT_ME: `anchor-${NavigationIds.RANDOM_FACTS_ABOUT_ME}`,
 };
 
 export const NAV_ITEMS: Array<NavItem> = [
+  {
+    label: 'Intro',
+    href: `/#${NavigationAnchors.INTRO}`,
+  },
   {
     label: 'How I work',
     href: `/#${NavigationAnchors.HOW_I_WORK}`,
