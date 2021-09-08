@@ -10,13 +10,18 @@ export enum NavigationIds {
   RANDOM_FACTS_ABOUT_ME = 'random-facts-about-me',
 }
 
+export const NavigationAnchors = {
+  HOW_I_WORK: `anchor-${NavigationIds.HOW_I_WORK}`,
+  RANDOM_FACTS_ABOUT_ME: `anchor-${NavigationIds.RANDOM_FACTS_ABOUT_ME}`,
+};
+
 export const NAV_ITEMS: Array<NavItem> = [
   {
     label: 'How I work',
-    href: `/#${NavigationIds.HOW_I_WORK}`,
+    href: `/#${NavigationAnchors.HOW_I_WORK}`,
   },
   {
     label: 'Random facts about me',
-    href: `/#${NavigationIds.RANDOM_FACTS_ABOUT_ME}`,
+    href: `/#${NavigationAnchors.RANDOM_FACTS_ABOUT_ME}`,
   },
 ];
