@@ -11,23 +11,25 @@ export enum NavigationIds {
   RANDOM_FACTS_ABOUT_ME = 'random-facts-about-me',
 }
 
-export const NavigationAnchors = {
-  INTRO: `anchor-${NavigationIds.INTRO}`,
-  HOW_I_WORK: `anchor-${NavigationIds.HOW_I_WORK}`,
-  RANDOM_FACTS_ABOUT_ME: `anchor-${NavigationIds.RANDOM_FACTS_ABOUT_ME}`,
+export const SECTION_APPENDIX = '-section';
+
+export const SectionIds = {
+  INTRO: NavigationIds.INTRO.concat(SECTION_APPENDIX),
+  HOW_I_WORK: NavigationIds.HOW_I_WORK.concat(SECTION_APPENDIX),
+  RANDOM_FACTS_ABOUT_ME: NavigationIds.RANDOM_FACTS_ABOUT_ME.concat(SECTION_APPENDIX),
 };
 
 export const NAV_ITEMS: Array<NavItem> = [
   {
     label: 'Intro',
-    href: `/#${NavigationAnchors.INTRO}`,
+    href: `/#${NavigationIds.INTRO}`,
   },
   {
     label: 'How I work',
-    href: `/#${NavigationAnchors.HOW_I_WORK}`,
+    href: `/#${NavigationIds.HOW_I_WORK}`,
   },
   {
-    label: 'Random facts about me',
-    href: `/#${NavigationAnchors.RANDOM_FACTS_ABOUT_ME}`,
+    label: 'Random facts',
+    href: `/#${NavigationIds.RANDOM_FACTS_ABOUT_ME}`,
   },
 ];

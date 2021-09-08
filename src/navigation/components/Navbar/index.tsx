@@ -17,7 +17,7 @@ import { HamburgerIcon } from '@chakra-ui/icons';
 import DesktopNav from './DesktopNav';
 import React, { useEffect, useState } from 'react';
 import MobileNav from './MobileNav';
-import { NAV_BAR_HEIGHT, NavigationIds } from '../../constants';
+import { NAV_BAR_HEIGHT, SectionIds } from '../../constants';
 import { getElementDimensions } from '../../utils';
 
 const Navbar = () => {
@@ -30,7 +30,7 @@ const Navbar = () => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY + NAV_BAR_HEIGHT;
 
-      const selectedSectionId = Object.values(NavigationIds).find((sectionId) => {
+      const selectedSectionId = Object.values(SectionIds).find((sectionId) => {
         const el = document.getElementById(sectionId);
         if (el) {
           const { offsetBottom, offsetTop } = getElementDimensions(el);

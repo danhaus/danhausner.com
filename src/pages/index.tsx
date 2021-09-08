@@ -5,7 +5,7 @@ import { getHomeData } from '../lib/datocms';
 import { ResponsiveImageType } from 'react-datocms';
 import Hero from '../components/Hero';
 import Section from '../components/Section';
-import { NavigationAnchors, NavigationIds } from '../navigation/constants';
+import { NavigationIds, SectionIds } from '../navigation/constants';
 
 export const getStaticProps: GetStaticProps = async () => {
   const homeData = await getHomeData();
@@ -35,7 +35,7 @@ const Home: NextPage<HomeProps> = ({ homeData }) => {
 
       <Hero profilePicture={profilePicture} />
 
-      <Section id={NavigationIds.INTRO} anchorId={NavigationAnchors.INTRO}>
+      <Section id={SectionIds.INTRO} anchorId={NavigationIds.INTRO}>
         <Text>Hello world! Full-stack web developer here with demonstrable phobia of spaghetti code.</Text>
         <br />
         <Text>
@@ -53,7 +53,7 @@ const Home: NextPage<HomeProps> = ({ homeData }) => {
         </Text>
       </Section>
 
-      <Section id={NavigationIds.HOW_I_WORK} anchorId={NavigationAnchors.HOW_I_WORK} heading="How I work" mt={8}>
+      <Section id={SectionIds.HOW_I_WORK} anchorId={NavigationIds.HOW_I_WORK} heading="How I work" mt={8}>
         <Text>My work life is guided by efficiency, balance, and excellence.</Text>
         <br />
         <Text>
@@ -68,8 +68,8 @@ const Home: NextPage<HomeProps> = ({ homeData }) => {
       </Section>
 
       <Section
-        id={NavigationIds.RANDOM_FACTS_ABOUT_ME}
-        anchorId={NavigationAnchors.RANDOM_FACTS_ABOUT_ME}
+        id={SectionIds.RANDOM_FACTS_ABOUT_ME}
+        anchorId={NavigationIds.RANDOM_FACTS_ABOUT_ME}
         heading="Random facts about me"
         mt={8}
       >
