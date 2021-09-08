@@ -1,4 +1,5 @@
 // Adapted & modified from https://chakra-templates.dev/navigation/navbar
+// Highlighted section: https://codedaily.io/tutorials/Sticky-Header-with-Highlighting-Sections-on-Scroll
 
 import {
   Box,
@@ -14,12 +15,39 @@ import {
 } from '@chakra-ui/react';
 import { HamburgerIcon } from '@chakra-ui/icons';
 import DesktopNav from './DesktopNav';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import MobileNav from './MobileNav';
-import { NAV_BAR_HEIGHT } from '../../constants';
+import { NAV_BAR_HEIGHT, NavigationIds } from '../../constants';
+import { getElementDimensions } from '../../utils';
 
 const Navbar = () => {
   const { isOpen, onToggle, onClose } = useDisclosure();
+  const [visibleSectionId, setVisibleSectionId] = useState('');
+
+  console.log(visibleSectionId);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + NAV_BAR_HEIGHT;
+
+      const selectedSectionId = Object.values(NavigationIds).find((sectionId) => {
+        const el = document.getElementById(sectionId);
+        if (el) {
+          const { offsetBottom, offsetTop } = getElementDimensions(el);
+          return scrollPosition > offsetTop && scrollPosition < offsetBottom;
+        }
+      });
+
+      if (selectedSectionId && selectedSectionId !== visibleSectionId) {
+        setVisibleSectionId(selectedSectionId);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [visibleSectionId]);
 
   return (
     <Box as="nav" position="fixed" w="100vw">
@@ -50,7 +78,7 @@ const Navbar = () => {
           </Text>
 
           <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
-            <DesktopNav />
+            <DesktopNav visibleSection={visibleSectionId} />
           </Flex>
         </Flex>
       </Flex>
@@ -65,7 +93,7 @@ const Navbar = () => {
         size="xs"
       >
         <DrawerContent>
-          <MobileNav onClose={onClose} />
+          <MobileNav visibleSection={visibleSectionId} onClose={onClose} />
         </DrawerContent>
         <DrawerOverlay style={{ background: 'rgb(0,0,0,0.3)', backdropFilter: 'blur(4px)' }} />
       </Drawer>

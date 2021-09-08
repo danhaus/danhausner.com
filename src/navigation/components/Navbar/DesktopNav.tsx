@@ -2,7 +2,11 @@ import { Box, Link, Stack, useColorModeValue } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import { NAV_ITEMS } from '../../constants';
 
-const DesktopNav = () => {
+interface DesktopNavProps {
+  visibleSection: string;
+}
+
+const DesktopNav = ({}: DesktopNavProps) => {
   const linkColor = useColorModeValue('gray.600', 'gray.200');
   const linkHoverColor = useColorModeValue('gray.800', 'white');
 

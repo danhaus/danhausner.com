@@ -7,6 +7,7 @@ import { NAV_ITEMS } from '../../constants';
 
 interface SidebarProps extends BoxProps {
   onClose: () => void;
+  visibleSection: string;
 }
 
 const MobileNav = ({ onClose, ...rest }: SidebarProps) => {
