@@ -1,18 +1,20 @@
 // Adapted & modified from https://chakra-templates.dev/navigation/sidebar
 
-import { Box, BoxProps, Flex, FlexProps, Link, useColorModeValue } from '@chakra-ui/react';
+import { Box, BoxProps, Flex, FlexProps, Link, useColorModeValue, Text } from '@chakra-ui/react';
 import React, { ReactText } from 'react';
 import NextLink from 'next/link';
-import { NAV_ITEMS } from '../../constants';
+import { NAV_ITEMS, SECTION_APPENDIX } from '../../constants';
 
 interface SidebarProps extends BoxProps {
   visibleSection: string;
 }
 
-const MobileNav = ({ ...rest }: SidebarProps) => {
+const MobileNav = ({ visibleSection, ...rest }: SidebarProps) => {
+  console.log('visibleSection', visibleSection);
   return (
     <Box
       bg={useColorModeValue('rgba(247, 235, 212, 1.0)', 'gray.900')}
+      py={6}
       borderRight="1px"
       borderRightColor={useColorModeValue('gray.200', 'gray.700')}
       w={{ base: 'full', md: 60 }}
@@ -21,7 +23,11 @@ const MobileNav = ({ ...rest }: SidebarProps) => {
       {...rest}
     >
       {NAV_ITEMS.map((navItem) => (
-        <NavItem key={navItem.label} href={navItem.href}>
+        <NavItem
+          key={navItem.label}
+          href={navItem.href}
+          highlighted={navItem.href.replace('/#', '') === visibleSection.replace(SECTION_APPENDIX, '')}
+        >
           {navItem.label}
         </NavItem>
       ))}
@@ -32,9 +38,11 @@ const MobileNav = ({ ...rest }: SidebarProps) => {
 interface NavItemProps extends FlexProps {
   children: ReactText;
   href: string;
+  highlighted: boolean;
 }
 
-const NavItem = ({ children, href, ...rest }: NavItemProps) => {
+const NavItem = ({ children, href, highlighted, ...rest }: NavItemProps) => {
+  console.log(`${href} is highlighted ${highlighted}`);
   return (
     <NextLink href={href} passHref>
       <Link href="#" style={{ textDecoration: 'none' }}>
@@ -42,16 +50,14 @@ const NavItem = ({ children, href, ...rest }: NavItemProps) => {
           align="center"
           p="4"
           mx="4"
-          borderRadius="lg"
+          borderRadius="md"
           role="group"
-          cursor="pointer"
-          _hover={{
-            bg: 'cyan.400',
-            color: 'white',
-          }}
+          bg={highlighted ? 'tertiary.light' : ''}
           {...rest}
         >
-          {children}
+          <Text fontSize="lg" casing="uppercase" fontWeight="bold" color={highlighted ? 'white' : 'tertiary.light'}>
+            {children}
+          </Text>
         </Flex>
       </Link>
     </NextLink>
