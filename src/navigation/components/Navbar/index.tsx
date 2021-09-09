@@ -24,13 +24,12 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + NAV_BAR_HEIGHT;
-
+      const scrollPosition = window.scrollY + window.innerHeight; // bottom of the window
       const selectedSectionId = Object.values(SectionIds).find((sectionId) => {
         const el = document.getElementById(sectionId);
         if (el) {
           const { offsetBottom, offsetTop } = getElementDimensions(el);
-          return scrollPosition >= offsetTop && scrollPosition < offsetBottom;
+          return scrollPosition > offsetTop && scrollPosition <= offsetBottom;
         }
       });
 
