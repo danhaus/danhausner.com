@@ -30,7 +30,7 @@ const Navbar = () => {
         const el = document.getElementById(sectionId);
         if (el) {
           const { offsetBottom, offsetTop } = getElementDimensions(el);
-          return scrollPosition > offsetTop && scrollPosition < offsetBottom;
+          return scrollPosition >= offsetTop && scrollPosition < offsetBottom;
         }
       });
 
