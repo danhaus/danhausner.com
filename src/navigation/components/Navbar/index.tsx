@@ -20,7 +20,7 @@ import { getElementDimensions } from '../../utils';
 
 const Navbar = () => {
   const { isOpen, onToggle, onClose } = useDisclosure();
-  const [visibleSectionId, setVisibleSectionId] = useState('');
+  const [visibleSectionId, setVisibleSectionId] = useState(SectionIds.HOME);
 
   useEffect(() => {
     const handleScroll = () => {
