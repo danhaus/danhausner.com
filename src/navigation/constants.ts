@@ -21,6 +21,8 @@ export const SectionIds = {
   RANDOM_FACTS_ABOUT_ME: NavigationIds.RANDOM_FACTS_ABOUT_ME.concat(SECTION_APPENDIX),
 };
 
+export const LAST_NAV_ITEM = SectionIds.RANDOM_FACTS_ABOUT_ME; // TODO: update this when adding more sections
+
 export const NAV_ITEMS: Array<NavItem> = [
   {
     label: 'Home',
