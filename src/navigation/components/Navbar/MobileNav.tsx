@@ -7,9 +7,10 @@ import { NAV_ITEMS, SECTION_APPENDIX } from '../../constants';
 
 interface SidebarProps extends BoxProps {
   visibleSection: string;
+  onClose: () => void;
 }
 
-const MobileNav = ({ visibleSection, ...rest }: SidebarProps) => {
+const MobileNav = ({ visibleSection, onClose, ...rest }: SidebarProps) => {
   console.log('visibleSection', visibleSection);
   return (
     <Box
@@ -27,6 +28,7 @@ const MobileNav = ({ visibleSection, ...rest }: SidebarProps) => {
           key={navItem.label}
           href={navItem.href}
           highlighted={navItem.href.replace('/#', '') === visibleSection.replace(SECTION_APPENDIX, '')}
+          onClick={onClose}
         >
           {navItem.label}
         </NavItem>

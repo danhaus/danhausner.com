@@ -93,7 +93,7 @@ const Navbar = () => {
         size="xs"
       >
         <DrawerContent>
-          <MobileNav visibleSection={visibleSectionId} />
+          <MobileNav visibleSection={visibleSectionId} onClose={onClose} />
         </DrawerContent>
         <DrawerOverlay style={{ background: 'rgb(0,0,0,0.3)', backdropFilter: 'blur(4px)' }} />
       </Drawer>
