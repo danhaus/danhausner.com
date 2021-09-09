@@ -57,11 +57,11 @@ const Home: NextPage<HomeProps> = ({ homeData }) => {
         <Text>My work life is guided by efficiency, balance, and excellence.</Text>
         <br />
         <Text>
-          I don&apos;t believe in 9–5, but I believe in working in a state of high productivity and resting/exercising
-          when the productivity is low; in other words, getting things done efficiently whilst having a balanced life. I
-          also strive for excellence, but not by default — considering the cost of excellence is important. Building a
-          great product for half the price may be much better ROI than spending the double on marginal improvements that
-          make barely any difference to the end user.
+          I don&apos;t believe in a traditional 9–5, but I believe in working in a state of high productivity and
+          resting/exercising when the productivity is low; in other words, getting things done efficiently whilst having
+          a balanced life. I also strive for excellence, but not by default — considering the cost of excellence is
+          important. Building a great product for half the price may be much better ROI than spending the double on
+          marginal improvements that make barely any difference to the end user.
         </Text>
         <br />
         <Text>My preferred tech stack is React, Prisma, and TypeScript.</Text>
