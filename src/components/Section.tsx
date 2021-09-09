@@ -1,5 +1,5 @@
 import { Box, BoxProps, Heading } from '@chakra-ui/react';
-import { NAV_BAR_HEIGHT } from '../navigation/constants';
+import NavAnchor from '../navigation/components/NavAnchor';
 
 interface SectionProps extends BoxProps {
   heading?: string;
@@ -10,17 +10,7 @@ const Section = ({ heading, children, anchorId, ...rest }: SectionProps) => {
   return (
     <Box as="section" {...rest}>
       {/* Offset anchor by navbar height for automatic scrolling to section */}
-      {anchorId && (
-        <a
-          id={anchorId}
-          style={{
-            display: 'block',
-            position: 'relative',
-            top: `-${NAV_BAR_HEIGHT}px`,
-            visibility: 'hidden',
-          }}
-        />
-      )}
+      {anchorId && <NavAnchor id={anchorId} />}
       {heading && <Heading mb={4}>{heading}</Heading>}
       {children}
     </Box>
