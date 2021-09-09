@@ -33,7 +33,7 @@ const Home: NextPage<HomeProps> = ({ homeData }) => {
         {/*<link rel="icon" href="/favicon.ico" />*/}
       </Head>
 
-      <Hero profilePicture={profilePicture} />
+      <Hero id={SectionIds.HOME} anchorId={NavigationIds.HOME} profilePicture={profilePicture} />
 
       <Section id={SectionIds.INTRO} anchorId={NavigationIds.INTRO}>
         <Text>Hello world! Full-stack web developer here with demonstrable phobia of spaghetti code.</Text>
