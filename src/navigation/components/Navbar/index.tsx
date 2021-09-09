@@ -24,8 +24,6 @@ const Navbar = () => {
   const { isOpen, onToggle, onClose } = useDisclosure();
   const [visibleSectionId, setVisibleSectionId] = useState('');
 
-  console.log(visibleSectionId);
-
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY + NAV_BAR_HEIGHT;
