@@ -11,7 +11,7 @@ const NavAnchor = ({ id }: NavAnchorProps) => {
 
   useEffect(() => {
     setOffset(-window.innerHeight / 2);
-  }, [window.innerHeight]);
+  }, []);
   return (
     <a
       id={id}
