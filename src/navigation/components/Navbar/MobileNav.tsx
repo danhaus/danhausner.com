@@ -11,18 +11,8 @@ interface SidebarProps extends BoxProps {
 }
 
 const MobileNav = ({ visibleSection, onClose, ...rest }: SidebarProps) => {
-  console.log('visibleSection', visibleSection);
   return (
-    <Box
-      bg={useColorModeValue('rgba(247, 235, 212, 1.0)', 'gray.900')}
-      py={6}
-      borderRight="1px"
-      borderRightColor={useColorModeValue('gray.200', 'gray.700')}
-      w={{ base: 'full', md: 60 }}
-      pos="fixed"
-      h="full"
-      {...rest}
-    >
+    <Box bg={useColorModeValue('background.light', 'background.dark')} py={6} w="full" pos="fixed" h="full" {...rest}>
       {NAV_ITEMS.map((navItem) => (
         <NavItem
           key={navItem.label}

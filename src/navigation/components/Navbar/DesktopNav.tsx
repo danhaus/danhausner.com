@@ -32,12 +32,13 @@ interface DesktopNavItemProps extends FlexProps {
 }
 
 const DesktopNavItem = ({ children, href, highlighted }: DesktopNavItemProps) => {
-  const linkHoverColor = useColorModeValue('secondary.light', 'white');
+  const linkHoverColor = useColorModeValue('primary.light', 'primary.dark');
   return (
     <Flex
       h={`${NAV_BAR_HEIGHT}px`}
       alignItems="center"
-      borderBottomColor={highlighted ? 'tertiary.light' : 'transparent'}
+      borderBottomColor={highlighted ? 'secondary.light' : 'transparent'}
+      color={highlighted ? 'secondary.light' : 'default'}
       borderBottomWidth={BORDER_WIDTH}
       borderTopWidth={BORDER_WIDTH}
       borderTopColor="transparent"
@@ -46,8 +47,7 @@ const DesktopNavItem = ({ children, href, highlighted }: DesktopNavItemProps) =>
         <Link
           p={2}
           fontSize="lg"
-          fontWeight="semibold"
-          // color={linkColor}
+          fontWeight="bold"
           _hover={{
             textDecoration: 'none',
             color: linkHoverColor,

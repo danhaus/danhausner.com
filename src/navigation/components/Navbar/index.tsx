@@ -48,9 +48,9 @@ const Navbar = () => {
   return (
     <Box as="nav" position="fixed" w="100vw">
       <Flex
-        bg={useColorModeValue('primary.light', 'gray.800')}
+        bg={useColorModeValue('background.light', 'background.dark')}
         opacity={0.92}
-        color={useColorModeValue('gray.600', 'white')}
+        color={useColorModeValue('tertiary.light', 'white')}
         h={`${NAV_BAR_HEIGHT}px`}
         py={{ base: 2 }}
         px={{ base: 4 }}
@@ -61,6 +61,7 @@ const Navbar = () => {
             onClick={onToggle}
             icon={<HamburgerIcon w={5} h={5} />}
             variant={'ghost'}
+            color="secondary.light"
             aria-label={'Toggle Navigation'}
           />
         </Flex>
