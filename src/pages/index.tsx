@@ -5,7 +5,7 @@ import { getHomeData } from '../lib/datocms';
 import { ResponsiveImageType } from 'react-datocms';
 import Hero from '../components/Hero';
 import Section from '../components/Section';
-import { NavigationIds } from '../navigation/constants';
+import { NavigationIds, SectionIds } from '../navigation/constants';
 
 export const getStaticProps: GetStaticProps = async () => {
   const homeData = await getHomeData();
@@ -33,9 +33,9 @@ const Home: NextPage<HomeProps> = ({ homeData }) => {
         {/*<link rel="icon" href="/favicon.ico" />*/}
       </Head>
 
-      <Hero profilePicture={profilePicture} />
+      <Hero id={SectionIds.HOME} anchorId={NavigationIds.HOME} profilePicture={profilePicture} />
 
-      <Section>
+      <Section id={SectionIds.INTRO} anchorId={NavigationIds.INTRO}>
         <Text>Hello world! Full-stack web developer here with demonstrable phobia of spaghetti code.</Text>
         <br />
         <Text>
@@ -53,21 +53,26 @@ const Home: NextPage<HomeProps> = ({ homeData }) => {
         </Text>
       </Section>
 
-      <Section id={NavigationIds.HOW_I_WORK} heading="How I work" mt={8}>
+      <Section id={SectionIds.HOW_I_WORK} anchorId={NavigationIds.HOW_I_WORK} heading="How I work" mt={8}>
         <Text>My work life is guided by efficiency, balance, and excellence.</Text>
         <br />
         <Text>
-          I don&apos;t believe in 9–5, but I believe in working in a state of high productivity and resting/exercising
-          when the productivity is low; in other words, getting things done efficiently whilst having a balanced life. I
-          also strive for excellence, but not by default — considering the cost of excellence is important. Building a
-          great product for half the price may be much better ROI than spending the double on marginal improvements that
-          make barely any difference to the end user.
+          I don&apos;t believe in a traditional 9–5, but I believe in working in a state of high productivity and
+          resting/exercising when the productivity is low; in other words, getting things done efficiently whilst having
+          a balanced life. I also strive for excellence, but not by default — considering the cost of excellence is
+          important. Building a great product for half the price may be much better ROI than spending the double on
+          marginal improvements that make barely any difference to the end user.
         </Text>
         <br />
         <Text>My preferred tech stack is React, Prisma, and TypeScript.</Text>
       </Section>
 
-      <Section id={NavigationIds.RANDOM_FACTS_ABOUT_ME} heading="Random facts about me" mt={8}>
+      <Section
+        id={SectionIds.RANDOM_FACTS_ABOUT_ME}
+        anchorId={NavigationIds.RANDOM_FACTS_ABOUT_ME}
+        heading="Random facts about me"
+        mt={8}
+      >
         <Text>⛵️&nbsp;&nbsp;Won the World Robotic Sailing Championship</Text>
         <br />
         <Text>👨‍💻&nbsp;&nbsp;Have two technical degrees</Text>

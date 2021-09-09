@@ -1,4 +1,5 @@
 // Adapted & modified from https://chakra-templates.dev/navigation/navbar
+// Highlighted section: https://codedaily.io/tutorials/Sticky-Header-with-Highlighting-Sections-on-Scroll
 
 import {
   Box,
@@ -7,26 +8,54 @@ import {
   DrawerOverlay,
   Flex,
   IconButton,
-  Text,
-  useBreakpointValue,
   useColorModeValue,
   useDisclosure,
 } from '@chakra-ui/react';
 import { HamburgerIcon } from '@chakra-ui/icons';
 import DesktopNav from './DesktopNav';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import MobileNav from './MobileNav';
+import { LAST_NAV_ITEM, NAV_BAR_HEIGHT, SectionIds } from '../../constants';
+import { getElementDimensions } from '../../utils';
 
 const Navbar = () => {
   const { isOpen, onToggle, onClose } = useDisclosure();
+  const [visibleSectionId, setVisibleSectionId] = useState(SectionIds.HOME);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY + window.innerHeight === document.documentElement.scrollHeight) {
+        setVisibleSectionId(LAST_NAV_ITEM);
+        return;
+      }
+
+      const scrollPosition = window.scrollY + window.innerHeight / 2; // bottom of the window
+      const selectedSectionId = Object.values(SectionIds).find((sectionId) => {
+        const el = document.getElementById(sectionId);
+        if (el) {
+          const { offsetBottom, offsetTop } = getElementDimensions(el);
+          return scrollPosition >= offsetTop && scrollPosition < offsetBottom;
+        }
+      });
+
+      if (selectedSectionId && selectedSectionId !== visibleSectionId) {
+        setVisibleSectionId(selectedSectionId);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [visibleSectionId]);
 
   return (
     <Box as="nav" position="fixed" w="100vw">
       <Flex
-        bg={useColorModeValue('primary.light', 'gray.800')}
+        bg={useColorModeValue('background.light', 'background.dark')}
         opacity={0.92}
-        color={useColorModeValue('gray.600', 'white')}
-        minH={'60px'}
+        color={useColorModeValue('tertiary.light', 'white')}
+        h={`${NAV_BAR_HEIGHT}px`}
         py={{ base: 2 }}
         px={{ base: 4 }}
         align={'center'}
@@ -36,20 +65,13 @@ const Navbar = () => {
             onClick={onToggle}
             icon={<HamburgerIcon w={5} h={5} />}
             variant={'ghost'}
+            color="secondary.light"
             aria-label={'Toggle Navigation'}
           />
         </Flex>
         <Flex display={{ base: 'none', md: 'flex' }} flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
-          <Text
-            textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
-            fontFamily={'heading'}
-            color={useColorModeValue('gray.800', 'white')}
-          >
-            Logo
-          </Text>
-
           <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
-            <DesktopNav />
+            <DesktopNav visibleSection={visibleSectionId} />
           </Flex>
         </Flex>
       </Flex>
@@ -64,7 +86,7 @@ const Navbar = () => {
         size="xs"
       >
         <DrawerContent>
-          <MobileNav onClose={onClose} />
+          <MobileNav visibleSection={visibleSectionId} onClose={onClose} />
         </DrawerContent>
         <DrawerOverlay style={{ background: 'rgb(0,0,0,0.3)', backdropFilter: 'blur(4px)' }} />
       </Drawer>

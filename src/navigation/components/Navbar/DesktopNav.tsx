@@ -1,32 +1,62 @@
-import { Box, Link, Stack, useColorModeValue } from '@chakra-ui/react';
+import { Flex, FlexProps, Link, Stack, useColorModeValue } from '@chakra-ui/react';
 import NextLink from 'next/link';
-import { NAV_ITEMS } from '../../constants';
+import { NAV_BAR_HEIGHT, NAV_ITEMS, SECTION_APPENDIX } from '../../constants';
+import React, { ReactText } from 'react';
 
-const DesktopNav = () => {
-  const linkColor = useColorModeValue('gray.600', 'gray.200');
-  const linkHoverColor = useColorModeValue('gray.800', 'white');
+const BORDER_WIDTH = 3; // Chakra Units
 
+interface DesktopNavProps {
+  visibleSection: string;
+}
+
+const DesktopNav = ({ visibleSection }: DesktopNavProps) => {
   return (
-    <Stack direction={'row'} spacing={4}>
+    <Stack direction={'row'} spacing={0}>
       {NAV_ITEMS.map((navItem) => (
-        <Box key={navItem.label}>
-          <NextLink href={navItem.href} passHref>
-            <Link
-              p={2}
-              fontSize={'sm'}
-              fontWeight={500}
-              color={linkColor}
-              _hover={{
-                textDecoration: 'none',
-                color: linkHoverColor,
-              }}
-            >
-              {navItem.label}
-            </Link>
-          </NextLink>
-        </Box>
+        <DesktopNavItem
+          key={navItem.label}
+          href={navItem.href}
+          highlighted={navItem.href.replace('/#', '') === visibleSection.replace(SECTION_APPENDIX, '')}
+        >
+          {navItem.label}
+        </DesktopNavItem>
       ))}
     </Stack>
+  );
+};
+
+interface DesktopNavItemProps extends FlexProps {
+  children: ReactText;
+  href: string;
+  highlighted: boolean;
+}
+
+const DesktopNavItem = ({ children, href, highlighted }: DesktopNavItemProps) => {
+  const linkHoverColor = useColorModeValue('primary.light', 'primary.dark');
+  return (
+    <Flex
+      h={`${NAV_BAR_HEIGHT}px`}
+      alignItems="center"
+      borderBottomColor={highlighted ? 'secondary.light' : 'transparent'}
+      color={highlighted ? 'secondary.light' : 'default'}
+      borderBottomWidth={BORDER_WIDTH}
+      borderTopWidth={BORDER_WIDTH}
+      borderTopColor="transparent"
+    >
+      <NextLink href={href} passHref>
+        <Link
+          p={2}
+          fontSize="lg"
+          fontWeight="bold"
+          _hover={{
+            textDecoration: 'none',
+            color: linkHoverColor,
+          }}
+        >
+          {children}
+        </Link>
+      </NextLink>
+    </Flex>
   );
 };
 
