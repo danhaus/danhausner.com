@@ -50,7 +50,7 @@ const Navbar = () => {
   }, [visibleSectionId]);
 
   return (
-    <Box as="nav" position="fixed" w="100vw">
+    <Box as="nav" position="fixed" w="100vw" zIndex={999}>
       <Flex
         bg={useColorModeValue('background.light', 'background.dark')}
         opacity={0.92}
