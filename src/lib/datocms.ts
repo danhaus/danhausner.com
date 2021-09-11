@@ -1,7 +1,7 @@
 import { GraphQLClient } from 'graphql-request';
 import { RequestDocument, Variables } from 'graphql-request/dist/types';
 
-export const PROFILE_PIC_SIZE = '120'; // px
+const PROFILE_PIC_SIZE = '120'; // px
 
 // See: https://www.datocms.com/blog/offer-responsive-progressive-lqip-images-in-2020
 const responsiveImageFragment = `

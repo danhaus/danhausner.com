@@ -1,6 +1,5 @@
 // Adapted from https://gist.github.com/franky47/321f55497eed657ec7d9652a5c33fcb7
 import { Flex, Box, Heading, HStack, FlexProps, useBreakpointValue } from '@chakra-ui/react';
-import { PROFILE_PIC_SIZE } from '../lib/datocms';
 import { Image, ResponsiveImageType } from 'react-datocms';
 import use100vh from '../hooks/use100vh';
 import NavAnchor from '../navigation/components/NavAnchor';
@@ -18,8 +17,8 @@ const Hero = ({ profilePicture, anchorId, ...rest }: HeroProps) => {
     <>
       {anchorId && <NavAnchor id={anchorId} />}
       <Flex ref={ref} flexDir="column" justifyContent="center" {...rest}>
-        <HStack h="max-content" alignItems="start">
-          <Box minW={`${PROFILE_PIC_SIZE}px`}>
+        <HStack h="max-content" spacing={0}>
+          <Box minW={{ base: '120px', md: '180px' }}>
             {/* eslint-disable-next-line jsx-a11y/alt-text */}
             <Image data={profilePicture.responsiveImage} pictureStyle={{ transform: 'rotate(15deg)' }} />{' '}
             {/* alt provided in data */}
