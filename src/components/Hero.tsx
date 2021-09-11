@@ -20,7 +20,11 @@ const Hero = ({ profilePicture, anchorId, ...rest }: HeroProps) => {
         <HStack h="max-content" spacing={0}>
           <Box minW={{ base: '120px', md: '180px' }}>
             {/* eslint-disable-next-line jsx-a11y/alt-text */}
-            <Image data={profilePicture.responsiveImage} pictureStyle={{ transform: 'rotate(15deg)' }} />{' '}
+            <Image
+              lazyLoad={false}
+              data={profilePicture.responsiveImage}
+              pictureStyle={{ transform: 'rotate(15deg)' }}
+            />{' '}
             {/* alt provided in data */}
           </Box>
           <Box>
