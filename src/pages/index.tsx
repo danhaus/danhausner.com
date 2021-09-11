@@ -1,11 +1,13 @@
 import type { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
-import { ListItem, Text, UnorderedList } from '@chakra-ui/react';
+import { Box, ListItem, Text, UnorderedList } from '@chakra-ui/react';
 import { getHomeData } from '../lib/datocms';
 import { ResponsiveImageType } from 'react-datocms';
 import Hero from '../components/Hero';
 import Section from '../components/Section';
 import { NavigationIds, SectionIds } from '../navigation/constants';
+
+const SECTION_SPACING = 16;
 
 export const getStaticProps: GetStaticProps = async () => {
   const homeData = await getHomeData();
@@ -26,7 +28,7 @@ const Home: NextPage<HomeProps> = ({ homeData }) => {
   // console.log(JSON.stringify(home));
   const { profilePicture } = homeData;
   return (
-    <>
+    <Box fontSize="lg">
       <Head>
         <title>I{"'"}m Daniel Hausner</title>
         <meta name="description" content="I'm Daniel Hausner, fullstack web developer." />
@@ -53,7 +55,7 @@ const Home: NextPage<HomeProps> = ({ homeData }) => {
         </Text>
       </Section>
 
-      <Section id={SectionIds.HOW_I_WORK} anchorId={NavigationIds.HOW_I_WORK} heading="How I work" mt={8}>
+      <Section id={SectionIds.HOW_I_WORK} anchorId={NavigationIds.HOW_I_WORK} heading="How I work" mt={SECTION_SPACING}>
         <Text>My work life is guided by efficiency, balance, and excellence.</Text>
         <br />
         <Text>
@@ -71,7 +73,7 @@ const Home: NextPage<HomeProps> = ({ homeData }) => {
         id={SectionIds.RANDOM_FACTS_ABOUT_ME}
         anchorId={NavigationIds.RANDOM_FACTS_ABOUT_ME}
         heading="Random facts about me"
-        mt={8}
+        mt={SECTION_SPACING}
       >
         <Text>⛵️&nbsp;&nbsp;Won the World Robotic Sailing Championship</Text>
         <br />
@@ -88,7 +90,7 @@ const Home: NextPage<HomeProps> = ({ homeData }) => {
         <Text>🚴‍♂️&nbsp;&nbsp;Did competitive cycling for most of my secondary school</Text>
         <br />
       </Section>
-    </>
+    </Box>
   );
 };
 
