@@ -56,8 +56,8 @@ const Hero = ({ profilePicture, anchorId, ...rest }: HeroProps) => {
           </SlideFade>
         </Heading>
       </Flex>
-      <Flex pos="fixed" bottom={6}>
-        <Fade in={scrollAnimationVisible}>
+      <Flex pos="fixed" bottom={4}>
+        <Fade in={scrollAnimationVisible} transition={{ enter: { duration: 1.2, delay: 2.5 } }}>
           {/* https://lottiefiles.com/33133-scroll-down */}
           <Lottie
             animationData={scrollAnimation}
