@@ -5,6 +5,7 @@ import use100vh from '../hooks/use100vh';
 import NavAnchor from '../navigation/components/NavAnchor';
 import Lottie from 'lottie-react';
 import * as scrollAnimation from '../static/scroll-lottie.json';
+import { useWindowScroll } from 'react-use';
 
 interface HeroProps extends FlexProps {
   profilePicture: {
@@ -15,6 +16,9 @@ interface HeroProps extends FlexProps {
 
 const Hero = ({ profilePicture, anchorId, ...rest }: HeroProps) => {
   const ref = use100vh();
+  const { y } = useWindowScroll();
+  const scrollAnimationVisible = y === 0;
+
   return (
     <Flex ref={ref} flexDir="column" justifyContent="center" alignItems="center">
       {anchorId && <NavAnchor id={anchorId} />}
@@ -48,7 +52,7 @@ const Hero = ({ profilePicture, anchorId, ...rest }: HeroProps) => {
           <br />
         </Heading>
       </Flex>
-      <Flex pos="fixed" bottom={6}>
+      <Flex pos="fixed" bottom={6} hidden={!scrollAnimationVisible}>
         {/* https://lottiefiles.com/33133-scroll-down */}
         <Lottie
           animationData={scrollAnimation}
