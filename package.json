@@ -27,6 +27,7 @@
     "framer-motion": "^4",
     "graphql": "^15.5.1",
     "graphql-request": "^3.5.0",
+    "lottie-react": "^2.1.0",
     "next": "11.1.0",
     "react": "17.0.2",
     "react-datocms": "^1.6.3",

@@ -3,6 +3,8 @@ import { Flex, Box, Heading, HStack, FlexProps, useBreakpointValue } from '@chak
 import { Image, ResponsiveImageType } from 'react-datocms';
 import use100vh from '../hooks/use100vh';
 import NavAnchor from '../navigation/components/NavAnchor';
+import Lottie from 'lottie-react';
+import * as scrollAnimation from '../static/scroll-lottie.json';
 
 interface HeroProps extends FlexProps {
   profilePicture: {
@@ -14,9 +16,9 @@ interface HeroProps extends FlexProps {
 const Hero = ({ profilePicture, anchorId, ...rest }: HeroProps) => {
   const ref = use100vh();
   return (
-    <>
+    <Flex ref={ref} flexDir="column" justifyContent="center" alignItems="center">
       {anchorId && <NavAnchor id={anchorId} />}
-      <Flex ref={ref} flexDir="column" justifyContent="center" {...rest}>
+      <Flex flexDir="column" {...rest}>
         <HStack h="max-content" spacing={0}>
           <Box minW={{ base: '120px', md: '180px' }}>
             {/* eslint-disable-next-line jsx-a11y/alt-text */}
@@ -46,7 +48,14 @@ const Hero = ({ profilePicture, anchorId, ...rest }: HeroProps) => {
           <br />
         </Heading>
       </Flex>
-    </>
+      <Flex pos="fixed" bottom={6}>
+        {/* https://lottiefiles.com/33133-scroll-down */}
+        <Lottie
+          animationData={scrollAnimation}
+          style={{ transform: 'rotate(180deg)', width: `${useBreakpointValue({ base: 5, md: 8 })}em` }}
+        />
+      </Flex>
+    </Flex>
   );
 };
 
