@@ -1,5 +1,5 @@
 // Adapted from https://gist.github.com/franky47/321f55497eed657ec7d9652a5c33fcb7
-import { Flex, Box, Heading, HStack, FlexProps, useBreakpointValue } from '@chakra-ui/react';
+import { Flex, Box, Heading, HStack, FlexProps, useBreakpointValue, Fade } from '@chakra-ui/react';
 import { Image, ResponsiveImageType } from 'react-datocms';
 import use100vh from '../hooks/use100vh';
 import NavAnchor from '../navigation/components/NavAnchor';
@@ -52,12 +52,14 @@ const Hero = ({ profilePicture, anchorId, ...rest }: HeroProps) => {
           <br />
         </Heading>
       </Flex>
-      <Flex pos="fixed" bottom={6} hidden={!scrollAnimationVisible}>
-        {/* https://lottiefiles.com/33133-scroll-down */}
-        <Lottie
-          animationData={scrollAnimation}
-          style={{ transform: 'rotate(180deg)', width: `${useBreakpointValue({ base: 5, md: 8 })}em` }}
-        />
+      <Flex pos="fixed" bottom={6}>
+        <Fade in={scrollAnimationVisible}>
+          {/* https://lottiefiles.com/33133-scroll-down */}
+          <Lottie
+            animationData={scrollAnimation}
+            style={{ transform: 'rotate(180deg)', width: `${useBreakpointValue({ base: 5, md: 8 })}em` }}
+          />
+        </Fade>
       </Flex>
     </Flex>
   );
