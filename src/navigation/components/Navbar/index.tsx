@@ -2,7 +2,7 @@
 // Highlighted section: https://codedaily.io/tutorials/Sticky-Header-with-Highlighting-Sections-on-Scroll
 
 import {
-  Box,
+  Center,
   Drawer,
   DrawerContent,
   DrawerOverlay,
@@ -50,14 +50,14 @@ const Navbar = () => {
   }, [visibleSectionId]);
 
   return (
-    <Box as="nav" position="fixed" w="100vw" zIndex={999}>
+    <Center as="nav" position="fixed" w={'100%'} zIndex={999}>
       <Flex
+        flex={1}
         bg={useColorModeValue('background.light', 'background.dark')}
         opacity={0.92}
         color={useColorModeValue('tertiary.light', 'white')}
         h={`${NAV_BAR_HEIGHT}px`}
         py={{ base: 2 }}
-        px={{ base: 4 }}
         align={'center'}
       >
         <Flex flex={{ base: 1, md: 'auto' }} ml={{ base: -2 }} display={{ base: 'flex', md: 'none' }}>
@@ -69,10 +69,8 @@ const Navbar = () => {
             aria-label={'Toggle Navigation'}
           />
         </Flex>
-        <Flex display={{ base: 'none', md: 'flex' }} flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
-          <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
-            <DesktopNav visibleSection={visibleSectionId} />
-          </Flex>
+        <Flex display={{ base: 'none', md: 'flex' }} flex={{ base: 1 }} justify={'start'}>
+          <DesktopNav visibleSection={visibleSectionId} />
         </Flex>
       </Flex>
 
@@ -90,7 +88,7 @@ const Navbar = () => {
         </DrawerContent>
         <DrawerOverlay style={{ background: 'rgb(0,0,0,0.3)', backdropFilter: 'blur(4px)' }} />
       </Drawer>
-    </Box>
+    </Center>
   );
 };
 
