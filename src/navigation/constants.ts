@@ -10,6 +10,7 @@ export enum NavigationIds {
   INTRO = 'intro',
   HOW_I_WORK = 'how-i-work',
   RANDOM_FACTS_ABOUT_ME = 'random-facts-about-me',
+  PROJECTS = 'projects',
 }
 
 export const SECTION_APPENDIX = '-section';
@@ -19,9 +20,10 @@ export const SectionIds = {
   INTRO: NavigationIds.INTRO.concat(SECTION_APPENDIX),
   HOW_I_WORK: NavigationIds.HOW_I_WORK.concat(SECTION_APPENDIX),
   RANDOM_FACTS_ABOUT_ME: NavigationIds.RANDOM_FACTS_ABOUT_ME.concat(SECTION_APPENDIX),
+  PROJECTS: NavigationIds.PROJECTS.concat(SECTION_APPENDIX),
 };
 
-export const LAST_NAV_ITEM = SectionIds.RANDOM_FACTS_ABOUT_ME; // TODO: update this when adding more sections
+export const LAST_NAV_ITEM = SectionIds.PROJECTS; // TODO: update this when adding more sections
 
 export const NAV_ITEMS: Array<NavItem> = [
   {
@@ -39,5 +41,9 @@ export const NAV_ITEMS: Array<NavItem> = [
   {
     label: 'Random facts',
     href: `/#${NavigationIds.RANDOM_FACTS_ABOUT_ME}`,
+  },
+  {
+    label: 'Projects',
+    href: `/#${NavigationIds.PROJECTS}`,
   },
 ];

@@ -6,6 +6,7 @@ import { ResponsiveImageType } from 'react-datocms';
 import Hero from '../components/Hero';
 import Section from '../components/Section';
 import { NavigationIds, SectionIds } from '../navigation/constants';
+import Projects from '../components/Projects';
 
 const SECTION_SPACING = 16;
 
@@ -85,6 +86,10 @@ const Home: NextPage<HomeProps> = ({ homeData }) => {
         <br />
         <Text>🚴‍♂️&nbsp;&nbsp;Did competitive cycling for most of my secondary school</Text>
         <br />
+      </Section>
+
+      <Section id={SectionIds.PROJECTS} anchorId={NavigationIds.PROJECTS} heading="Projects" mt={SECTION_SPACING}>
+        <Projects />
       </Section>
     </Box>
   );
