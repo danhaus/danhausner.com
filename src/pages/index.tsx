@@ -1,6 +1,6 @@
 import type { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
-import { Box, ListItem, Text, UnorderedList } from '@chakra-ui/react';
+import { Box, Text } from '@chakra-ui/react';
 import { getHomeData } from '../lib/datocms';
 import { ResponsiveImageType } from 'react-datocms';
 import Hero from '../components/Hero';
@@ -51,7 +51,7 @@ const Home: NextPage<HomeProps> = ({ homeData }) => {
         <br />
         <Text>
           I&apos;m a digital nomad. In my downtime, I thrive on being outdoors — I especially like mountaineering,
-          hiking, and climbing. I also do calisthenics and run regularly — currently training for a marathon.
+          hiking, and climbing. I also do calisthenics and run regularly — recently ran my first trail marathon.
         </Text>
       </Section>
 
@@ -66,7 +66,7 @@ const Home: NextPage<HomeProps> = ({ homeData }) => {
           marginal improvements that make barely any difference to the end user.
         </Text>
         <br />
-        <Text>My preferred tech stack is React, Prisma, and TypeScript.</Text>
+        <Text>My preferred tech stack is React, Next.js, Prisma, and TypeScript.</Text>
       </Section>
 
       <Section
@@ -77,15 +77,11 @@ const Home: NextPage<HomeProps> = ({ homeData }) => {
       >
         <Text>⛵️&nbsp;&nbsp;Won the World Robotic Sailing Championship</Text>
         <br />
-        <Text>👨‍💻&nbsp;&nbsp;Have two technical degrees</Text>
-        <UnorderedList listStylePos="inside">
-          <ListItem>
-            Computing Science MSc from <em>Imperial&nbsp;College&nbsp;London</em> (Distinction)
-          </ListItem>
-          <ListItem>
-            Mechanical Engineering BEng from <em>University&nbsp;of&nbsp;Southampton</em> (First Class)
-          </ListItem>
-        </UnorderedList>
+        <Text>
+          👨‍💻&nbsp;&nbsp;Graduated from <em>Imperial&nbsp;College&nbsp;London</em> with Distinction in{' '}
+          <em>Computing Science MSc</em> while managed to complete the Kickstart&nbsp;London startup accelerator
+          programme
+        </Text>
         <br />
         <Text>🚴‍♂️&nbsp;&nbsp;Did competitive cycling for most of my secondary school</Text>
         <br />
