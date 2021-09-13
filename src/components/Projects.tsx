@@ -3,34 +3,37 @@ import {
   AccordionButton,
   AccordionIcon,
   AccordionItem,
+  AccordionItemProps,
   AccordionPanel,
   Box,
   Heading,
 } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 
+// TODO: remove item id's once this is fixed: https://github.com/chakra-ui/chakra-ui/issues/4328
+
 const Projects = () => {
   return (
     <Accordion allowToggle defaultIndex={0}>
-      <Item heading={'Aimtal'}>
+      <Item id={'aimtal'} heading={'Aimtal'}>
         Aimtal is a Boston-base digital marketing agency, whose clients include companies like Trello and Confluence. I
         help them to get technical things right: web development, SEO, internal technical processes and alike.
       </Item>
-      <Item heading={'Labl.it'}>
+      <Item id={'labl.it'} heading={'Labl.it'}>
         Labl.it is a UK-based startup that delivers digital solutions for commercial kitchens. I worked with the team in
         their early stages as the only developer, when I built an app that helped them raise pre-seed funding.
       </Item>
-      <Item heading={'Dweet'}>
+      <Item id={'dweet.'} heading={'Dweet'}>
         London-based Dweet is Upwork for the fashion & luxury industries. My role was to aid the team in making their
         web app mobile friendly.
       </Item>
-      <Item heading={'Grow Football'}>
+      <Item id={'grow-football'} heading={'Grow Football'}>
         Grow Football delivers real-time football analysis to iPhones. I collaborated with their cutting-edge research
         team on my master&apos;s thesis, when I created an AI-based fitness mobile application to minimise the risk of
         sports injuries. The app uses iPhone&apos;s front-facing camera in real-time to recognise & analyse the exercise
         and alerts the user of incorrect technique.
       </Item>
-      <Item heading={'Foodprint'}>
+      <Item id={'foodprint'} heading={'Foodprint'}>
         Did you know that food production is responsible for 26% of global greenhouse gas emissions? My group project at
         Imperial College London developed the Foodprint mobile app to inform general public on the CO<sub>2</sub> impact
         of the food they consume, or even better: before they consume it. The metrics is instantly computed from
@@ -41,14 +44,14 @@ const Projects = () => {
   );
 };
 
-interface ItemProps {
+interface ItemProps extends AccordionItemProps {
   heading: string;
   children: ReactNode;
 }
 
-const Item = ({ heading, children }: ItemProps) => {
+const Item = ({ heading, children, ...rest }: ItemProps) => {
   return (
-    <AccordionItem borderTopWidth={2} borderColor={'tertiary.light'} _last={{ borderBottomWidth: 2 }}>
+    <AccordionItem borderTopWidth={2} borderColor={'tertiary.light'} _last={{ borderBottomWidth: 2 }} {...rest}>
       <h2>
         <AccordionButton color={'tertiary.light'} _expanded={{ color: 'secondary.light' }}>
           <Box flex="1" textAlign="left">
