@@ -3,10 +3,10 @@ import Head from 'next/head';
 import { Box, Text } from '@chakra-ui/react';
 import { getHomeData } from '../lib/datocms';
 import { ResponsiveImageType } from 'react-datocms';
-import Hero from '../components/Hero';
-import Section from '../components/Section';
+import Hero from '../home/components/Hero';
+import Section from '../home/components/Section';
 import { NavigationIds, SectionIds } from '../navigation/constants';
-import Projects from '../components/Projects';
+import Projects from '../home/components/Projects';
 
 const SECTION_SPACING = 16;
 

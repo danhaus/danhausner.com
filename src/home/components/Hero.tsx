@@ -1,10 +1,10 @@
 // Adapted from https://gist.github.com/franky47/321f55497eed657ec7d9652a5c33fcb7
 import { Flex, Box, Heading, HStack, FlexProps, useBreakpointValue, Fade, SlideFade } from '@chakra-ui/react';
 import { Image, ResponsiveImageType } from 'react-datocms';
-import use100vh from '../hooks/use100vh';
-import NavAnchor from '../navigation/components/NavAnchor';
+import use100vh from '../../hooks/use100vh';
+import NavAnchor from '../../navigation/components/NavAnchor';
 import Lottie from 'lottie-react';
-import * as scrollAnimation from '../static/scroll-lottie.json';
+import * as scrollAnimation from '../../static/scroll-lottie.json';
 import { useWindowScroll } from 'react-use';
 
 interface HeroProps extends FlexProps {

@@ -1,5 +1,5 @@
 import { Box, BoxProps, Heading } from '@chakra-ui/react';
-import NavAnchor from '../navigation/components/NavAnchor';
+import NavAnchor from '../../navigation/components/NavAnchor';
 
 interface SectionProps extends BoxProps {
   heading?: string;
