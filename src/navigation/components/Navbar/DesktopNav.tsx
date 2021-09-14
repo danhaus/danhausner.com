@@ -1,6 +1,6 @@
 import { Flex, FlexProps, Link, Stack, useColorModeValue } from '@chakra-ui/react';
 import NextLink from 'next/link';
-import { NAV_BAR_HEIGHT, NAV_ITEMS, SECTION_APPENDIX } from '../../constants';
+import { NAV_BAR_HEIGHT, INTERNAL_NAV_ITEMS, SECTION_APPENDIX } from '../../constants';
 import React, { ReactText } from 'react';
 
 const BORDER_WIDTH = 3; // Chakra Units
@@ -12,7 +12,7 @@ interface DesktopNavProps {
 const DesktopNav = ({ visibleSection }: DesktopNavProps) => {
   return (
     <Stack direction={'row'} spacing={0}>
-      {NAV_ITEMS.map((navItem) => (
+      {INTERNAL_NAV_ITEMS.map((navItem) => (
         <DesktopNavItem
           key={navItem.label}
           href={navItem.href}

@@ -25,7 +25,7 @@ export const SectionIds = {
 
 export const LAST_NAV_ITEM = SectionIds.PROJECTS; // TODO: update this when adding more sections
 
-export const NAV_ITEMS: Array<NavItem> = [
+export const INTERNAL_NAV_ITEMS: Array<NavItem> = [
   {
     label: 'Home',
     href: `/#${NavigationIds.HOME}`,

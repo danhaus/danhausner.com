@@ -3,7 +3,7 @@
 import { Box, BoxProps, Flex, FlexProps, Link, useColorModeValue, Text } from '@chakra-ui/react';
 import React, { ReactText } from 'react';
 import NextLink from 'next/link';
-import { NAV_ITEMS, SECTION_APPENDIX } from '../../constants';
+import { INTERNAL_NAV_ITEMS, SECTION_APPENDIX } from '../../constants';
 
 interface SidebarProps extends BoxProps {
   visibleSection: string;
@@ -13,7 +13,7 @@ interface SidebarProps extends BoxProps {
 const MobileNav = ({ visibleSection, onClose, ...rest }: SidebarProps) => {
   return (
     <Box bg={useColorModeValue('background.light', 'background.dark')} py={6} w="full" pos="fixed" h="full" {...rest}>
-      {NAV_ITEMS.map((navItem) => (
+      {INTERNAL_NAV_ITEMS.map((navItem) => (
         <NavItem
           key={navItem.label}
           href={navItem.href}
