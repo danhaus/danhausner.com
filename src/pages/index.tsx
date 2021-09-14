@@ -106,6 +106,10 @@ const Home: NextPage<HomeProps> = ({ homeData }) => {
         </InternalLink>{' '}
         my favourite products, tools, and books.
       </Section>
+
+      <Section heading="Blog" mt={SECTION_SPACING}>
+        Coming soon!
+      </Section>
     </Box>
   );
 };
