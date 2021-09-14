@@ -1,8 +1,8 @@
 // Adapted & modified from https://chakra-templates.dev/navigation/sidebar
 
-import { Box, BoxProps, Flex, FlexProps, useColorModeValue, Text } from '@chakra-ui/react';
+import { Box, BoxProps, Flex, FlexProps, useColorModeValue, Text, Divider, Center } from '@chakra-ui/react';
 import React, { ReactText } from 'react';
-import { INTERNAL_NAV_ITEMS, SECTION_APPENDIX } from '../../constants';
+import { EXTERNAL_NAV_ITEMS, INTERNAL_NAV_ITEMS, SECTION_APPENDIX } from '../../constants';
 import InternalLink from '../../../components/InternalLink';
 
 interface SidebarProps extends BoxProps {
@@ -18,6 +18,19 @@ const MobileNav = ({ visibleSection, onClose, ...rest }: SidebarProps) => {
           key={navItem.label}
           href={navItem.href}
           highlighted={navItem.href.replace('/#', '') === visibleSection.replace(SECTION_APPENDIX, '')}
+          onClick={onClose}
+        >
+          {navItem.label}
+        </MobileNavItem>
+      ))}
+      <Center>
+        <Divider my={4} opacity={0.62} borderLeftWidth={'2px'} borderColor={'tertiary.light'} w="90%" />
+      </Center>
+      {EXTERNAL_NAV_ITEMS.map((navItem) => (
+        <MobileNavItem
+          key={navItem.label}
+          href={navItem.href}
+          highlighted={navItem.href.replace('/', '') == visibleSection}
           onClick={onClose}
         >
           {navItem.label}
