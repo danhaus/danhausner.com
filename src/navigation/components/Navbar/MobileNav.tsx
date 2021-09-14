@@ -14,14 +14,14 @@ const MobileNav = ({ visibleSection, onClose, ...rest }: SidebarProps) => {
   return (
     <Box bg={useColorModeValue('background.light', 'background.dark')} py={6} w="full" pos="fixed" h="full" {...rest}>
       {INTERNAL_NAV_ITEMS.map((navItem) => (
-        <NavItem
+        <MobileNavItem
           key={navItem.label}
           href={navItem.href}
           highlighted={navItem.href.replace('/#', '') === visibleSection.replace(SECTION_APPENDIX, '')}
           onClick={onClose}
         >
           {navItem.label}
-        </NavItem>
+        </MobileNavItem>
       ))}
     </Box>
   );
@@ -33,11 +33,11 @@ interface NavItemProps extends FlexProps {
   highlighted: boolean;
 }
 
-const NavItem = ({ children, href, highlighted, ...rest }: NavItemProps) => {
+const MobileNavItem = ({ children, href, highlighted, ...rest }: NavItemProps) => {
   console.log(`${href} is highlighted ${highlighted}`);
   return (
     <NextLink href={href} passHref>
-      <Link href="#" style={{ textDecoration: 'none' }}>
+      <Link style={{ textDecoration: 'none' }}>
         <Flex
           align="center"
           p="4"
