@@ -13,7 +13,7 @@ const Section = ({ heading, children, anchorId, ...rest }: SectionProps) => {
       {/* Offset anchor by navbar height for automatic scrolling to section */}
       {anchorId && <NavAnchor id={anchorId} />}
       {heading && (
-        <Heading mb={10} size="4xl" color="tertiary.light">
+        <Heading mb={10} size="4xl">
           {heading}
         </Heading>
       )}
