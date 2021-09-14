@@ -25,7 +25,7 @@ const Navbar = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    const handleScroll = () => {
+    const handleScrollAndPathChange = () => {
       if (pathname === '/') {
         if (window.scrollY + window.innerHeight === document.documentElement.scrollHeight) {
           setVisibleItem(LAST_NAV_ITEM);
@@ -43,6 +43,8 @@ const Navbar = () => {
 
         if (selectedSectionId && selectedSectionId !== visibleItem) {
           setVisibleItem(selectedSectionId);
+        } else if (window.scrollY === 0) {
+          setVisibleItem(SectionIds.HOME);
         }
       } else {
         switch (pathname) {
@@ -55,9 +57,10 @@ const Navbar = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    handleScrollAndPathChange();
+    window.addEventListener('scroll', handleScrollAndPathChange);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('scroll', handleScrollAndPathChange);
     };
   }, [visibleItem, pathname]);
 
