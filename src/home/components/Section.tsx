@@ -1,8 +1,9 @@
 import { Box, BoxProps, Heading } from '@chakra-ui/react';
 import NavAnchor from '../../navigation/components/NavAnchor';
+import { ReactNode } from 'react';
 
 interface SectionProps extends BoxProps {
-  heading?: string;
+  heading?: ReactNode;
   anchorId?: string; // For scrolling to the section using this id as hash in url whilst taking the navbar offset into account
 }
 

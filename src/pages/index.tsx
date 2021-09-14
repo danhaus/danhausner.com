@@ -7,6 +7,7 @@ import Hero from '../home/components/Hero';
 import Section from '../home/components/Section';
 import { NavigationIds, SectionIds } from '../navigation/constants';
 import Projects from '../home/components/Projects';
+import InternalLink from '../components/InternalLink';
 
 const SECTION_SPACING = 16;
 
@@ -90,6 +91,20 @@ const Home: NextPage<HomeProps> = ({ homeData }) => {
 
       <Section id={SectionIds.PROJECTS} anchorId={NavigationIds.PROJECTS} heading="Projects" mt={SECTION_SPACING}>
         <Projects />
+      </Section>
+
+      <Section
+        heading={
+          <InternalLink variant="styled" href={`/${NavigationIds.STUFF_I_LIKE}`}>
+            Stuff I like
+          </InternalLink>
+        }
+        mt={SECTION_SPACING}
+      >
+        <InternalLink href={`/${NavigationIds.STUFF_I_LIKE}`} variant="styled">
+          Get to know
+        </InternalLink>{' '}
+        my favourite products, tools, and books.
       </Section>
     </Box>
   );
