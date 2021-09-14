@@ -1,9 +1,9 @@
 // Adapted & modified from https://chakra-templates.dev/navigation/sidebar
 
-import { Box, BoxProps, Flex, FlexProps, Link, useColorModeValue, Text } from '@chakra-ui/react';
+import { Box, BoxProps, Flex, FlexProps, useColorModeValue, Text } from '@chakra-ui/react';
 import React, { ReactText } from 'react';
-import NextLink from 'next/link';
 import { INTERNAL_NAV_ITEMS, SECTION_APPENDIX } from '../../constants';
+import InternalLink from '../../../components/InternalLink';
 
 interface SidebarProps extends BoxProps {
   visibleSection: string;
@@ -36,23 +36,21 @@ interface NavItemProps extends FlexProps {
 const MobileNavItem = ({ children, href, highlighted, ...rest }: NavItemProps) => {
   console.log(`${href} is highlighted ${highlighted}`);
   return (
-    <NextLink href={href} passHref>
-      <Link style={{ textDecoration: 'none' }}>
-        <Flex
-          align="center"
-          p="4"
-          mx="4"
-          borderRadius="md"
-          role="group"
-          bg={highlighted ? 'tertiary.light' : ''}
-          {...rest}
-        >
-          <Text fontSize="lg" casing="uppercase" fontWeight="bold" color={highlighted ? 'white' : 'tertiary.light'}>
-            {children}
-          </Text>
-        </Flex>
-      </Link>
-    </NextLink>
+    <InternalLink href={href} style={{ textDecoration: 'none' }}>
+      <Flex
+        align="center"
+        p="4"
+        mx="4"
+        borderRadius="md"
+        role="group"
+        bg={highlighted ? 'tertiary.light' : ''}
+        {...rest}
+      >
+        <Text fontSize="lg" casing="uppercase" fontWeight="bold" color={highlighted ? 'white' : 'tertiary.light'}>
+          {children}
+        </Text>
+      </Flex>
+    </InternalLink>
   );
 };
 

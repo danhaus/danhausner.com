@@ -1,7 +1,7 @@
-import { Center, Divider, Flex, FlexProps, Link, Stack, useColorModeValue } from '@chakra-ui/react';
-import NextLink from 'next/link';
+import { Center, Divider, Flex, FlexProps, Stack, useColorModeValue } from '@chakra-ui/react';
 import { NAV_BAR_HEIGHT, INTERNAL_NAV_ITEMS, SECTION_APPENDIX, EXTERNAL_NAV_ITEMS } from '../../constants';
 import React, { ReactText } from 'react';
+import InternalLink from '../../../components/InternalLink';
 
 const BORDER_WIDTH = 3; // Chakra Units
 
@@ -56,19 +56,18 @@ const DesktopNavItem = ({ children, href, highlighted }: DesktopNavItemProps) =>
       borderTopWidth={BORDER_WIDTH}
       borderTopColor="transparent"
     >
-      <NextLink href={href} passHref>
-        <Link
-          p={2}
-          fontSize="lg"
-          fontWeight="bold"
-          _hover={{
-            textDecoration: 'none',
-            color: linkHoverColor,
-          }}
-        >
-          {children}
-        </Link>
-      </NextLink>
+      <InternalLink
+        href={href}
+        p={2}
+        fontSize="lg"
+        fontWeight="bold"
+        _hover={{
+          textDecoration: 'none',
+          color: linkHoverColor,
+        }}
+      >
+        {children}
+      </InternalLink>
     </Flex>
   );
 };
