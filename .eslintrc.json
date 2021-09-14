@@ -13,7 +13,10 @@
     "prettier/prettier": "error",
     "@typescript-eslint/indent": [
       "error",
-      2
+      2,
+      {
+        "offsetTernaryExpressions": true
+      }
     ],
     "@typescript-eslint/no-unused-vars": "error",
     "@typescript-eslint/no-explicit-any": "error"

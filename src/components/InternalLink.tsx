@@ -5,12 +5,27 @@ import { UrlObject } from 'url';
 
 interface InternalLinkPros extends Omit<LinkProps, 'href'> {
   href: string | UrlObject;
+  variant?: 'plain' | 'styled';
 }
 
-const InternalLink = ({ children, href, ...rest }: InternalLinkPros) => {
+const InternalLink = ({ children, href, variant = 'plain', ...rest }: InternalLinkPros) => {
+  const styles: Omit<LinkProps, 'href'> =
+    variant === 'styled'
+      ? {
+          textDecoration: 'underline',
+          textDecorationStyle: 'dashed',
+          textDecorationThickness: '0.125em',
+          textUnderlineOffset: '2.5px',
+          _hover: {
+            textDecorationStyle: 'solid',
+          },
+        }
+      : {};
   return (
     <NextLink href={href} passHref>
-      <Link {...rest}>{children}</Link>
+      <Link {...styles} {...rest}>
+        {children}
+      </Link>
     </NextLink>
   );
 };
