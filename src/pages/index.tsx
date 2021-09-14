@@ -27,7 +27,6 @@ interface HomeProps {
 }
 
 const Home: NextPage<HomeProps> = ({ homeData }) => {
-  // console.log(JSON.stringify(home));
   const { profilePicture } = homeData;
   return (
     <Box fontSize="lg">

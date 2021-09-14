@@ -53,7 +53,7 @@ const Item = ({ heading, children, ...rest }: ItemProps) => {
   return (
     <AccordionItem borderTopWidth={2} borderColor={'tertiary.light'} _last={{ borderBottomWidth: 2 }} {...rest}>
       <h2>
-        <AccordionButton color={'tertiary.light'} _expanded={{ color: 'secondary.light' }}>
+        <AccordionButton color={'tertiary.light'} _expanded={{ color: 'primary.light' }}>
           <Box flex="1" textAlign="left">
             <Heading as={'h3'}>{heading}</Heading>
           </Box>

@@ -23,7 +23,7 @@ const DesktopNav = ({ visibleSection }: DesktopNavProps) => {
         </DesktopNavItem>
       ))}
       <Center h="60%">
-        <Divider mx={4} orientation="vertical" opacity={0.62} borderLeftWidth={'2px'} borderColor={'tertiary.light'} />
+        <Divider mx={4} orientation="vertical" opacity={0.62} borderLeftWidth={'2px'} borderColor={'secondary.light'} />
       </Center>
       {EXTERNAL_NAV_ITEMS.map((navItem) => (
         <DesktopNavItem
@@ -50,8 +50,8 @@ const DesktopNavItem = ({ children, href, highlighted }: DesktopNavItemProps) =>
     <Flex
       h={`${NAV_BAR_HEIGHT}px`}
       alignItems="center"
-      borderBottomColor={highlighted ? 'secondary.light' : 'transparent'}
-      color={highlighted ? 'secondary.light' : 'default'}
+      borderBottomColor={highlighted ? 'primary.light' : 'transparent'}
+      color={highlighted ? 'primary.light' : 'default'}
       borderBottomWidth={BORDER_WIDTH}
       borderTopWidth={BORDER_WIDTH}
       borderTopColor="transparent"

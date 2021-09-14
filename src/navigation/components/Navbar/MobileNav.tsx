@@ -47,7 +47,6 @@ interface NavItemProps extends FlexProps {
 }
 
 const MobileNavItem = ({ children, href, highlighted, ...rest }: NavItemProps) => {
-  console.log(`${href} is highlighted ${highlighted}`);
   return (
     <InternalLink href={href} style={{ textDecoration: 'none' }}>
       <Flex
@@ -59,7 +58,7 @@ const MobileNavItem = ({ children, href, highlighted, ...rest }: NavItemProps) =
         bg={highlighted ? 'tertiary.light' : ''}
         {...rest}
       >
-        <Text fontSize="lg" casing="uppercase" fontWeight="bold" color={highlighted ? 'white' : 'tertiary.light'}>
+        <Text fontSize="lg" casing="uppercase" fontWeight="bold" color={highlighted ? 'white' : 'secondary.light'}>
           {children}
         </Text>
       </Flex>

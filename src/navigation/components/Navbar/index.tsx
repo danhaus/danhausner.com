@@ -70,7 +70,7 @@ const Navbar = () => {
         flex={1}
         bg={useColorModeValue('background.light', 'background.dark')}
         opacity={0.92}
-        color={useColorModeValue('tertiary.light', 'white')}
+        color={useColorModeValue('secondary.light', 'white')}
         h={`${NAV_BAR_HEIGHT}px`}
         py={{ base: 2 }}
         align={'center'}
