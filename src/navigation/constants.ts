@@ -1,16 +1,12 @@
 export const NAV_BAR_HEIGHT = 60; // px
 
-export interface NavItem {
-  label: string;
-  href: string;
-}
-
 export enum NavigationIds {
   HOME = 'home',
   INTRO = 'intro',
   HOW_I_WORK = 'how-i-work',
   RANDOM_FACTS_ABOUT_ME = 'random-facts-about-me',
   PROJECTS = 'projects',
+  STUFF_I_LIKE = 'stuff-i-like', // reflects page name
 }
 
 export const SECTION_APPENDIX = '-section';
@@ -24,6 +20,11 @@ export const SectionIds = {
 };
 
 export const LAST_NAV_ITEM = SectionIds.PROJECTS; // TODO: update this when adding more sections
+
+export interface NavItem {
+  label: string;
+  href: string;
+}
 
 export const INTERNAL_NAV_ITEMS: Array<NavItem> = [
   {
@@ -45,5 +46,12 @@ export const INTERNAL_NAV_ITEMS: Array<NavItem> = [
   {
     label: 'Projects',
     href: `/#${NavigationIds.PROJECTS}`,
+  },
+];
+
+export const EXTERNAL_NAV_ITEMS: Array<NavItem> = [
+  {
+    label: 'Stuff I like',
+    href: `/${NavigationIds.STUFF_I_LIKE}`,
   },
 ];

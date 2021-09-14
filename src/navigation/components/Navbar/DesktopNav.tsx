@@ -1,6 +1,6 @@
-import { Flex, FlexProps, Link, Stack, useColorModeValue } from '@chakra-ui/react';
+import { Center, Divider, Flex, FlexProps, Link, Stack, useColorModeValue } from '@chakra-ui/react';
 import NextLink from 'next/link';
-import { NAV_BAR_HEIGHT, INTERNAL_NAV_ITEMS, SECTION_APPENDIX } from '../../constants';
+import { NAV_BAR_HEIGHT, INTERNAL_NAV_ITEMS, SECTION_APPENDIX, EXTERNAL_NAV_ITEMS } from '../../constants';
 import React, { ReactText } from 'react';
 
 const BORDER_WIDTH = 3; // Chakra Units
@@ -10,13 +10,26 @@ interface DesktopNavProps {
 }
 
 const DesktopNav = ({ visibleSection }: DesktopNavProps) => {
+  const visibleSectionWithoutAppendix = visibleSection.replace(SECTION_APPENDIX, '');
   return (
-    <Stack direction={'row'} spacing={0}>
+    <Stack direction={'row'} spacing={0} align="center">
       {INTERNAL_NAV_ITEMS.map((navItem) => (
         <DesktopNavItem
           key={navItem.label}
           href={navItem.href}
-          highlighted={navItem.href.replace('/#', '') === visibleSection.replace(SECTION_APPENDIX, '')}
+          highlighted={navItem.href.replace('/#', '') === visibleSectionWithoutAppendix}
+        >
+          {navItem.label}
+        </DesktopNavItem>
+      ))}
+      <Center h="60%">
+        <Divider mx={4} orientation="vertical" opacity={0.6} borderLeftWidth={'2px'} borderColor={'tertiary.light'} />
+      </Center>
+      {EXTERNAL_NAV_ITEMS.map((navItem) => (
+        <DesktopNavItem
+          key={navItem.label}
+          href={navItem.href}
+          highlighted={navItem.href.replace('/', '') === visibleSection}
         >
           {navItem.label}
         </DesktopNavItem>

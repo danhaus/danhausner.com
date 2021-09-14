@@ -15,31 +15,43 @@ import { HamburgerIcon } from '@chakra-ui/icons';
 import DesktopNav from './DesktopNav';
 import React, { useEffect, useState } from 'react';
 import MobileNav from './MobileNav';
-import { LAST_NAV_ITEM, NAV_BAR_HEIGHT, SectionIds } from '../../constants';
+import { LAST_NAV_ITEM, NAV_BAR_HEIGHT, NavigationIds, SectionIds } from '../../constants';
 import { getElementDimensions } from '../../utils';
+import { useLocation } from 'react-use';
 
 const Navbar = () => {
   const { isOpen, onToggle, onClose } = useDisclosure();
-  const [visibleSectionId, setVisibleSectionId] = useState(SectionIds.HOME);
+  const [visibleItem, setVisibleItem] = useState(SectionIds.HOME);
+  const { pathname } = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY + window.innerHeight === document.documentElement.scrollHeight) {
-        setVisibleSectionId(LAST_NAV_ITEM);
-        return;
-      }
-
-      const scrollPosition = window.scrollY + window.innerHeight / 2; // bottom of the window
-      const selectedSectionId = Object.values(SectionIds).find((sectionId) => {
-        const el = document.getElementById(sectionId);
-        if (el) {
-          const { offsetBottom, offsetTop } = getElementDimensions(el);
-          return scrollPosition >= offsetTop && scrollPosition < offsetBottom;
+      if (pathname === '/') {
+        if (window.scrollY + window.innerHeight === document.documentElement.scrollHeight) {
+          setVisibleItem(LAST_NAV_ITEM);
+          return;
         }
-      });
 
-      if (selectedSectionId && selectedSectionId !== visibleSectionId) {
-        setVisibleSectionId(selectedSectionId);
+        const scrollPosition = window.scrollY + window.innerHeight / 2;
+        const selectedSectionId = Object.values(SectionIds).find((sectionId) => {
+          const el = document.getElementById(sectionId);
+          if (el) {
+            const { offsetBottom, offsetTop } = getElementDimensions(el);
+            return scrollPosition >= offsetTop && scrollPosition < offsetBottom;
+          }
+        });
+
+        if (selectedSectionId && selectedSectionId !== visibleItem) {
+          setVisibleItem(selectedSectionId);
+        }
+      } else {
+        switch (pathname) {
+          case `/${NavigationIds.STUFF_I_LIKE}`:
+            setVisibleItem(NavigationIds.STUFF_I_LIKE);
+            break;
+          default:
+            setVisibleItem('');
+        }
       }
     };
 
@@ -47,7 +59,7 @@ const Navbar = () => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [visibleSectionId]);
+  }, [visibleItem, pathname]);
 
   return (
     <Center as="nav" position="fixed" w={'100%'} zIndex={999}>
@@ -70,7 +82,7 @@ const Navbar = () => {
           />
         </Flex>
         <Flex display={{ base: 'none', md: 'flex' }} flex={{ base: 1 }} justify={'start'}>
-          <DesktopNav visibleSection={visibleSectionId} />
+          <DesktopNav visibleSection={visibleItem} />
         </Flex>
       </Flex>
 
@@ -84,7 +96,7 @@ const Navbar = () => {
         size="xs"
       >
         <DrawerContent>
-          <MobileNav visibleSection={visibleSectionId} onClose={onClose} />
+          <MobileNav visibleSection={visibleItem} onClose={onClose} />
         </DrawerContent>
         <DrawerOverlay style={{ background: 'rgb(0,0,0,0.3)', backdropFilter: 'blur(4px)' }} />
       </Drawer>
