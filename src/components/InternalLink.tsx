@@ -13,11 +13,11 @@ const InternalLink = ({ children, href, variant = 'plain', ...rest }: InternalLi
     variant === 'styled'
       ? {
           textDecoration: 'underline',
-          textDecorationStyle: 'dashed',
+          textColor: 'secondary.light',
           textDecorationThickness: '0.125em',
           textUnderlineOffset: '2.5px',
           _hover: {
-            textDecorationStyle: 'solid',
+            textColor: 'inherit',
           },
         }
       : {};

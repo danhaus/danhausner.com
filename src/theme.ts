@@ -16,9 +16,6 @@ const theme = extendTheme({
       light: '#595959',
       dark: '#b3b3b3',
     },
-    tertiary: {
-      light: '#737373',
-    },
   },
   styles: {
     global: {

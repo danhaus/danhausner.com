@@ -23,7 +23,7 @@ const DesktopNav = ({ visibleSection }: DesktopNavProps) => {
         </DesktopNavItem>
       ))}
       <Center h="60%">
-        <Divider mx={4} orientation="vertical" opacity={0.62} borderLeftWidth={'2px'} borderColor={'secondary.light'} />
+        <Divider mx={4} orientation="vertical" borderLeftWidth={'2px'} borderColor={'secondary.light'} />
       </Center>
       {EXTERNAL_NAV_ITEMS.map((navItem) => (
         <DesktopNavItem
