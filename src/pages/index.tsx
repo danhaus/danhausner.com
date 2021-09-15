@@ -73,7 +73,7 @@ const Home: NextPage<HomeProps> = ({ homeData }) => {
       <Section
         id={SectionIds.RANDOM_FACTS_ABOUT_ME}
         anchorId={NavigationIds.RANDOM_FACTS_ABOUT_ME}
-        heading="Random facts about me"
+        heading="Random facts"
         mt={SECTION_SPACING}
       >
         <Text>⛵️&nbsp;&nbsp;Won the World Robotic Sailing Championship</Text>
