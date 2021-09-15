@@ -21,12 +21,12 @@ export const ExternalLink = ({ children, ...rest }: LinkProps) => {
   );
 };
 
-interface InternalLinkPros extends Omit<LinkProps, 'href'> {
+interface InternalLinkProps extends Omit<LinkProps, 'href'> {
   href: string | UrlObject;
   variant?: 'plain' | 'styled';
 }
 
-export const InternalLink = ({ children, href, variant = 'plain', ...rest }: InternalLinkPros) => {
+export const InternalLink = ({ children, href, variant = 'plain', ...rest }: InternalLinkProps) => {
   const styles: Omit<LinkProps, 'href'> =
     variant === 'styled'
       ? {
