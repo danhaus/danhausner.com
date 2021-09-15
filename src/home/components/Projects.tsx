@@ -30,8 +30,8 @@ const Projects = () => {
       <Item id={'grow-football'} heading={'Grow Football'}>
         Grow Football delivers real-time football analysis to iPhones. I collaborated with their cutting-edge research
         team on my master&apos;s thesis, when I created an AI-based fitness mobile application to minimise the risk of
-        sports injuries. The app uses iPhone&apos;s front-facing camera in real-time to recognise & analyse the exercise
-        and alerts the user of incorrect technique.
+        sports injuries. The app uses iPhone&apos;s front-facing camera and computer vision in real-time to recognise &
+        analyse the exercise and alerts the user of incorrect technique.
       </Item>
       <Item id={'foodprint'} heading={'Foodprint'}>
         Did you know that food production is responsible for 26% of global greenhouse gas emissions? My group project at
