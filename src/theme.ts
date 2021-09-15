@@ -13,11 +13,8 @@ const theme = extendTheme({
       dark: '#f5f5f5',
     },
     secondary: {
-      light: '#595959',
+      light: '#6d6c6a',
       dark: '#b3b3b3',
-    },
-    tertiary: {
-      light: '#737373',
     },
   },
   styles: {

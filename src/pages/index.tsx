@@ -7,7 +7,7 @@ import Hero from '../home/components/Hero';
 import Section from '../home/components/Section';
 import { NavigationIds, SectionIds } from '../navigation/constants';
 import Projects from '../home/components/Projects';
-import InternalLink from '../components/InternalLink';
+import { InternalLink } from '../components/Links';
 
 const SECTION_SPACING = 16;
 
@@ -73,7 +73,7 @@ const Home: NextPage<HomeProps> = ({ homeData }) => {
       <Section
         id={SectionIds.RANDOM_FACTS_ABOUT_ME}
         anchorId={NavigationIds.RANDOM_FACTS_ABOUT_ME}
-        heading="Random facts about me"
+        heading="Random facts"
         mt={SECTION_SPACING}
       >
         <Text>⛵️&nbsp;&nbsp;Won the World Robotic Sailing Championship</Text>

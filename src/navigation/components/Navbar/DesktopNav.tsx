@@ -1,7 +1,7 @@
 import { Center, Divider, Flex, FlexProps, Stack, useColorModeValue } from '@chakra-ui/react';
 import { NAV_BAR_HEIGHT, INTERNAL_NAV_ITEMS, SECTION_APPENDIX, EXTERNAL_NAV_ITEMS } from '../../constants';
 import React, { ReactText } from 'react';
-import InternalLink from '../../../components/InternalLink';
+import { InternalLink } from '../../../components/Links';
 
 const BORDER_WIDTH = 3; // Chakra Units
 
@@ -23,7 +23,7 @@ const DesktopNav = ({ visibleSection }: DesktopNavProps) => {
         </DesktopNavItem>
       ))}
       <Center h="60%">
-        <Divider mx={4} orientation="vertical" opacity={0.62} borderLeftWidth={'2px'} borderColor={'secondary.light'} />
+        <Divider mx={4} orientation="vertical" borderLeftWidth={'2px'} borderColor={'secondary.light'} />
       </Center>
       {EXTERNAL_NAV_ITEMS.map((navItem) => (
         <DesktopNavItem

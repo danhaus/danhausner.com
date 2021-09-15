@@ -3,7 +3,7 @@
 import { Box, BoxProps, Flex, FlexProps, useColorModeValue, Text, Divider, Center } from '@chakra-ui/react';
 import React, { ReactText } from 'react';
 import { EXTERNAL_NAV_ITEMS, INTERNAL_NAV_ITEMS, SECTION_APPENDIX } from '../../constants';
-import InternalLink from '../../../components/InternalLink';
+import { InternalLink } from '../../../components/Links';
 
 interface SidebarProps extends BoxProps {
   visibleSection: string;
@@ -24,7 +24,7 @@ const MobileNav = ({ visibleSection, onClose, ...rest }: SidebarProps) => {
         </MobileNavItem>
       ))}
       <Center>
-        <Divider my={4} opacity={0.62} borderLeftWidth={'2px'} borderColor={'tertiary.light'} w="90%" />
+        <Divider my={4} borderLeftWidth={'2px'} borderColor={'secondary.light'} w="90%" />
       </Center>
       {EXTERNAL_NAV_ITEMS.map((navItem) => (
         <MobileNavItem
@@ -55,7 +55,7 @@ const MobileNavItem = ({ children, href, highlighted, ...rest }: NavItemProps) =
         mx="4"
         borderRadius="md"
         role="group"
-        bg={highlighted ? 'tertiary.light' : ''}
+        bg={highlighted ? 'secondary.light' : ''}
         {...rest}
       >
         <Text fontSize="lg" casing="uppercase" fontWeight="bold" color={highlighted ? 'white' : 'secondary.light'}>
