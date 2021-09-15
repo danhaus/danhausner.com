@@ -1,14 +1,32 @@
 import { Link, LinkProps } from '@chakra-ui/react';
+import { UrlObject } from 'url';
 import NextLink from 'next/link';
 import React from 'react';
-import { UrlObject } from 'url';
+
+export const ExternalLink = ({ children, ...rest }: LinkProps) => {
+  return (
+    <Link
+      isExternal
+      textDecoration="underline"
+      textDecorationStyle="dashed"
+      textDecorationThickness="0.125em"
+      textUnderlineOffset="2.5px"
+      _hover={{
+        textDecorationStyle: 'solid',
+      }}
+      {...rest}
+    >
+      {children}
+    </Link>
+  );
+};
 
 interface InternalLinkPros extends Omit<LinkProps, 'href'> {
   href: string | UrlObject;
   variant?: 'plain' | 'styled';
 }
 
-const InternalLink = ({ children, href, variant = 'plain', ...rest }: InternalLinkPros) => {
+export const InternalLink = ({ children, href, variant = 'plain', ...rest }: InternalLinkPros) => {
   const styles: Omit<LinkProps, 'href'> =
     variant === 'styled'
       ? {
@@ -29,5 +47,3 @@ const InternalLink = ({ children, href, variant = 'plain', ...rest }: InternalLi
     </NextLink>
   );
 };
-
-export default InternalLink;

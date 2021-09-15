@@ -3,7 +3,7 @@ import { Box, Heading } from '@chakra-ui/react';
 import Head from 'next/head';
 import Section from '../stuff-i-like/components/Section';
 import { NAV_BAR_HEIGHT } from '../navigation/constants';
-import ExternalLink from '../components/ExternalLink';
+import { ExternalLink } from '../components/Links';
 
 const StuffILike: NextPage = () => {
   return (

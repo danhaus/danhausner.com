@@ -3,7 +3,7 @@
 import { Box, BoxProps, Flex, FlexProps, useColorModeValue, Text, Divider, Center } from '@chakra-ui/react';
 import React, { ReactText } from 'react';
 import { EXTERNAL_NAV_ITEMS, INTERNAL_NAV_ITEMS, SECTION_APPENDIX } from '../../constants';
-import InternalLink from '../../../components/InternalLink';
+import { InternalLink } from '../../../components/Links';
 
 interface SidebarProps extends BoxProps {
   visibleSection: string;

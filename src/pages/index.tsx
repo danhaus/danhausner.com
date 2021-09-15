@@ -7,7 +7,7 @@ import Hero from '../home/components/Hero';
 import Section from '../home/components/Section';
 import { NavigationIds, SectionIds } from '../navigation/constants';
 import Projects from '../home/components/Projects';
-import InternalLink from '../components/InternalLink';
+import { InternalLink } from '../components/Links';
 
 const SECTION_SPACING = 16;
 

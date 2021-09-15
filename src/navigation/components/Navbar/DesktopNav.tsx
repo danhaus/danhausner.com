@@ -1,7 +1,7 @@
 import { Center, Divider, Flex, FlexProps, Stack, useColorModeValue } from '@chakra-ui/react';
 import { NAV_BAR_HEIGHT, INTERNAL_NAV_ITEMS, SECTION_APPENDIX, EXTERNAL_NAV_ITEMS } from '../../constants';
 import React, { ReactText } from 'react';
-import InternalLink from '../../../components/InternalLink';
+import { InternalLink } from '../../../components/Links';
 
 const BORDER_WIDTH = 3; // Chakra Units
 
