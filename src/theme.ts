@@ -13,7 +13,7 @@ const theme = extendTheme({
       dark: '#f5f5f5',
     },
     secondary: {
-      light: '#6d6c6a',
+      light: '#676665',
       dark: '#b3b3b3',
     },
   },
