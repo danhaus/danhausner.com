@@ -71,9 +71,10 @@ const Home: NextPage<HomeProps> = ({ homeData }) => {
         </Text>
         <br />
         <Text>
-          My preferred tech stack is <ExternalLink href="https://reactjs.org/">React</ExternalLink>,{' '}
-          <ExternalLink href="https://nextjs.org/">Next.js</ExternalLink>,{' '}
-          <ExternalLink href="https://www.prisma.io/">Prisma</ExternalLink>, and{' '}
+          My preferred tech stack is <ExternalLink href="https://nextjs.org/">Next.js</ExternalLink>,{' '}
+          <ExternalLink href="https://www.prisma.io/">Prisma</ExternalLink>,{' '}
+          <ExternalLink href="https://reactjs.org/">React</ExternalLink>,{' '}
+          <ExternalLink href="https://chakra-ui.com/">Chakra UI</ExternalLink>, and{' '}
           <ExternalLink href="https://www.typescriptlang.org/">TypeScript</ExternalLink>.
         </Text>
       </Section>
