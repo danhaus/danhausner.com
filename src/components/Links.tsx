@@ -13,9 +13,13 @@ const linkStyles: Omit<LinkProps, 'href'> = {
   },
 };
 
-export const ExternalLink = ({ children, ...rest }: LinkProps) => {
+interface ExternalLinkProps extends Omit<LinkProps, 'href'> {
+  href: string;
+}
+
+export const ExternalLink = ({ children, href, ...rest }: ExternalLinkProps) => {
   return (
-    <Link isExternal {...linkStyles} {...rest}>
+    <Link isExternal href={href} {...linkStyles} {...rest}>
       {children}
     </Link>
   );
