@@ -1,6 +1,6 @@
 import type { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
-import { Box, Text } from '@chakra-ui/react';
+import { Box, Text, Tooltip } from '@chakra-ui/react';
 import { getHomeData } from '../lib/datocms';
 import { ResponsiveImageType } from 'react-datocms';
 import Hero from '../home/components/Hero';
@@ -63,8 +63,11 @@ const Home: NextPage<HomeProps> = ({ homeData }) => {
           I don&apos;t believe in a traditional 9–5, but I believe in working in a state of high productivity and in
           resting/exercising when need to recharge; in other words, getting things done efficiently whilst having a
           balanced life. I also strive for excellence, but not by default — considering the cost of excellence is
-          important. Building a great product for half the price may be much better ROI than spending the double on
-          marginal improvements that make barely any difference to the end user.
+          important. Building a great product for half the price may be much better{' '}
+          <Tooltip label="Return on Investment" aria-label="A tooltip" bg="primary.light">
+            ROI
+          </Tooltip>{' '}
+          spending the double on marginal improvements that make barely any difference to the end user.
         </Text>
         <br />
         <Text>
