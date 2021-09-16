@@ -41,6 +41,9 @@ const StuffILike: NextPage = () => {
           <ExternalLink key="typescript" href="https://www.typescriptlang.org/">
             TypeScript
           </ExternalLink>,
+          <ExternalLink key="datocms" href="https://www.datocms.com/">
+            DatoCMS
+          </ExternalLink>,
         ]}
       />
 
