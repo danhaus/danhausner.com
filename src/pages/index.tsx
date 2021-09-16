@@ -7,7 +7,7 @@ import Hero from '../home/components/Hero';
 import Section from '../home/components/Section';
 import { NavigationIds, SectionIds } from '../navigation/constants';
 import Projects from '../home/components/Projects';
-import { InternalLink } from '../components/Links';
+import { ExternalLink, InternalLink } from '../components/Links';
 
 const SECTION_SPACING = 16;
 
@@ -67,7 +67,12 @@ const Home: NextPage<HomeProps> = ({ homeData }) => {
           marginal improvements that make barely any difference to the end user.
         </Text>
         <br />
-        <Text>My preferred tech stack is React, Next.js, Prisma, and TypeScript.</Text>
+        <Text>
+          My preferred tech stack is <ExternalLink href="https://reactjs.org/">React</ExternalLink>,{' '}
+          <ExternalLink href="https://nextjs.org/">Next.js</ExternalLink>,{' '}
+          <ExternalLink href="https://www.prisma.io/">Prisma</ExternalLink>, and{' '}
+          <ExternalLink href="https://www.typescriptlang.org/">TypeScript</ExternalLink>.
+        </Text>
       </Section>
 
       <Section
@@ -80,7 +85,8 @@ const Home: NextPage<HomeProps> = ({ homeData }) => {
         <br />
         <Text>
           👨‍💻&nbsp;&nbsp;Graduated from <em>Imperial&nbsp;College&nbsp;London</em> with Distinction in{' '}
-          <em>Computing Science MSc</em> while managed to complete the Kickstart&nbsp;London startup accelerator
+          <em>Computing Science MSc</em> while managed to complete the{' '}
+          <ExternalLink href="https://www.kickstartglobal.com/">Kickstart&nbsp;London</ExternalLink> startup accelerator
           programme
         </Text>
         <br />
