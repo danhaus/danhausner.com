@@ -22,7 +22,7 @@ const Hero = ({ profilePicture, anchorId, ...rest }: HeroProps) => {
   return (
     <Flex ref={ref} flexDir="column" justifyContent="center" alignItems="center">
       {anchorId && <NavAnchor id={anchorId} />}
-      <Flex flexDir="column" {...rest}>
+      <Flex flexDir="column" {...rest} overflow="hidden">
         <SlideFade in offsetX={'10rem'} offsetY={'0'} transition={{ enter: { duration: 0.8, delay: 0.2 } }}>
           <HStack h="max-content" spacing={0}>
             <Box minW={{ base: '120px', md: '180px' }}>
