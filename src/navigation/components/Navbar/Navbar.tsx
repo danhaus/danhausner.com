@@ -75,7 +75,7 @@ const Navbar = () => {
         py={{ base: 2 }}
         align={'center'}
       >
-        <Flex flex={{ base: 1, md: 'auto' }} ml={{ base: -2 }} display={{ base: 'flex', md: 'none' }}>
+        <Flex flex={{ base: 1, md: 'auto' }} ml={2} display={{ base: 'flex', md: 'none' }}>
           <IconButton
             onClick={onToggle}
             icon={<HamburgerIcon w={5} h={5} />}
