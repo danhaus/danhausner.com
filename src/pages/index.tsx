@@ -10,7 +10,7 @@ import Projects from '../home/components/Projects';
 import { ExternalLink, InternalLink } from '../components/Links';
 import Email from '../components/Email';
 
-const SECTION_SPACING = 16;
+const SECTION_SPACING = 28;
 
 export const getStaticProps: GetStaticProps = async () => {
   const homeData = await getHomeData();
