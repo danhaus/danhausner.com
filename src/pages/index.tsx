@@ -8,6 +8,7 @@ import Section from '../home/components/Section';
 import { NavigationIds, SectionIds } from '../navigation/constants';
 import Projects from '../home/components/Projects';
 import { ExternalLink, InternalLink } from '../components/Links';
+import Email from '../components/Email';
 
 const SECTION_SPACING = 16;
 
@@ -118,6 +119,17 @@ const Home: NextPage<HomeProps> = ({ homeData }) => {
 
       <Section heading="Blog" mt={SECTION_SPACING}>
         Coming soon!
+      </Section>
+
+      <Section id={SectionIds.CONTACT} anchorId={NavigationIds.CONTACT} heading="Get in touch" mt={SECTION_SPACING}>
+        <Text>
+          Want to say hey? Got exciting project or opportunity? Want o chat about tech? Drop me a line at <Email />.
+        </Text>
+        <br />
+        <Text>
+          You can also find me on{' '}
+          <ExternalLink href="https://www.linkedin.com/in/daniel-hausner/">LinkedIn</ExternalLink>.
+        </Text>
       </Section>
     </Box>
   );

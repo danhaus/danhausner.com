@@ -6,6 +6,7 @@ export enum NavigationIds {
   HOW_I_WORK = 'how-i-work',
   RANDOM_FACTS_ABOUT_ME = 'random-facts-about-me',
   PROJECTS = 'projects',
+  CONTACT = 'contact',
   STUFF_I_LIKE = 'stuff-i-like', // reflects page name
 }
 
@@ -17,9 +18,10 @@ export const SectionIds = {
   HOW_I_WORK: NavigationIds.HOW_I_WORK.concat(SECTION_APPENDIX),
   RANDOM_FACTS_ABOUT_ME: NavigationIds.RANDOM_FACTS_ABOUT_ME.concat(SECTION_APPENDIX),
   PROJECTS: NavigationIds.PROJECTS.concat(SECTION_APPENDIX),
+  CONTACT: NavigationIds.CONTACT.concat(SECTION_APPENDIX),
 };
 
-export const LAST_NAV_ITEM = SectionIds.PROJECTS; // TODO: update this when adding more sections
+export const LAST_NAV_ITEM = SectionIds.CONTACT; // TODO: update this when adding more sections
 
 export interface NavItem {
   label: string;
@@ -46,6 +48,10 @@ export const INTERNAL_NAV_ITEMS: Array<NavItem> = [
   {
     label: 'Projects',
     href: `/#${NavigationIds.PROJECTS}`,
+  },
+  {
+    label: 'Contact',
+    href: `/#${NavigationIds.CONTACT}`,
   },
 ];
 
