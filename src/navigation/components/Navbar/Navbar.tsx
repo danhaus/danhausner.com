@@ -84,7 +84,7 @@ const Navbar = () => {
             aria-label={'Toggle Navigation'}
           />
         </Flex>
-        <Flex display={{ base: 'none', md: 'flex' }} flex={{ base: 1 }} justify={'start'}>
+        <Flex display={{ base: 'none', md: 'flex' }} flex={{ base: 1 }} justify={'center'}>
           <DesktopNav visibleSection={visibleItem} />
         </Flex>
       </Flex>
