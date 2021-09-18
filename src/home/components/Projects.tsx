@@ -9,6 +9,7 @@ import {
   Heading,
 } from '@chakra-ui/react';
 import { ReactNode } from 'react';
+import { ExternalLink } from '../../components/Links';
 
 // TODO: remove item id's once this is fixed: https://github.com/chakra-ui/chakra-ui/issues/4328
 
@@ -16,29 +17,36 @@ const Projects = () => {
   return (
     <Accordion allowToggle defaultIndex={0}>
       <Item id={'aimtal'} heading={'Aimtal'}>
-        Aimtal is a Boston-base digital marketing agency, whose clients include companies like Trello and Confluence. I
-        help them to get technical things right: web development, SEO, internal technical processes and alike.
+        <ExternalLink href="http://aimtal.com/">Aimtal</ExternalLink> is a Boston-base digital marketing agency, whose
+        clients include companies like Trello and Confluence. I helped them to get technical things right: web
+        development, SEO, internal technical processes and alike.
       </Item>
       <Item id={'labl.it'} heading={'Labl.it'}>
-        Labl.it is a UK-based startup that delivers digital solutions for commercial kitchens. I worked with the team in
-        their early stages as the only developer, when I built an app that helped them raise pre-seed funding.
+        <ExternalLink href="https://labl.it/">Labl.it</ExternalLink> is a UK-based startup that delivers digital
+        solutions for commercial kitchens. I worked with the team in their early stages as the only developer, when I
+        built the app that helped them raise pre-seed funding.
       </Item>
       <Item id={'dweet.'} heading={'Dweet'}>
-        London-based Dweet is Upwork for the fashion & luxury industries. My role was to aid the team in making their
-        web app mobile friendly.
+        London-based <ExternalLink href="https://dweet.com/">Dweet</ExternalLink> is Upwork for the fashion & luxury
+        industries. My role was to aid the team in making their web app mobile friendly.
       </Item>
       <Item id={'grow-football'} heading={'Grow Football'}>
-        Grow Football delivers real-time football analysis to iPhones. I collaborated with their cutting-edge research
-        team on my master&apos;s thesis, when I created an AI-based fitness mobile application to minimise the risk of
-        sports injuries. The app uses iPhone&apos;s front-facing camera and computer vision in real-time to recognise &
-        analyse the exercise and alerts the user of incorrect technique.
+        <ExternalLink href="https://www.grow.football/">Grow Football</ExternalLink> delivers real-time football
+        analysis to iPhones. I collaborated with their cutting-edge research team on my master&apos;s thesis, when I
+        created an AI-based fitness mobile application to minimise the risk of sports injuries. The app uses
+        iPhone&apos;s front-facing camera and computer vision in real-time to recognise & analyse the exercise and
+        alerts the user of incorrect technique.
       </Item>
       <Item id={'foodprint'} heading={'Foodprint'}>
-        Did you know that food production is responsible for 26% of global greenhouse gas emissions? My group project at
-        Imperial College London developed the Foodprint mobile app to inform general public on the CO<sub>2</sub> impact
-        of the food they consume, or even better: before they consume it. The metrics is instantly computed from
-        unpackaged food photos, barcodes, and recipes — this way the app can be easily used in the store and aid users
-        in their responsible buy decisions.
+        Did you know that food production is responsible for{' '}
+        <ExternalLink href="https://ourworldindata.org/food-ghg-emissions">
+          26% of global greenhouse gas emissions
+        </ExternalLink>
+        ? My group project at Imperial College London developed the{' '}
+        <ExternalLink href="https://foodprint.orth.uk/">Foodprint</ExternalLink> mobile app to inform general public on
+        the CO<sub>2</sub> impact of the food they consume, or even better: before they consume it. The metrics is
+        instantly computed from unpackaged food photos, barcodes, and recipes — this way the app can be easily used in
+        the store and aid users in their responsible buy decisions.
       </Item>
     </Accordion>
   );

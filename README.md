@@ -1,1 +1,1 @@
-This is source for my personal website.
+This is source for [danhausner.com](www.danhausner.com).

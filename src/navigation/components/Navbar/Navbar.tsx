@@ -75,7 +75,7 @@ const Navbar = () => {
         py={{ base: 2 }}
         align={'center'}
       >
-        <Flex flex={{ base: 1, md: 'auto' }} ml={{ base: -2 }} display={{ base: 'flex', md: 'none' }}>
+        <Flex flex={{ base: 1, md: 'auto' }} ml={2} display={{ base: 'flex', md: 'none' }}>
           <IconButton
             onClick={onToggle}
             icon={<HamburgerIcon w={5} h={5} />}
@@ -84,7 +84,7 @@ const Navbar = () => {
             aria-label={'Toggle Navigation'}
           />
         </Flex>
-        <Flex display={{ base: 'none', md: 'flex' }} flex={{ base: 1 }} justify={'start'}>
+        <Flex display={{ base: 'none', md: 'flex' }} flex={{ base: 1 }} justify={'center'}>
           <DesktopNav visibleSection={visibleItem} />
         </Flex>
       </Flex>

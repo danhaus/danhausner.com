@@ -1,15 +1,16 @@
 import type { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
-import { Box, Text } from '@chakra-ui/react';
+import { Box, Text, Tooltip } from '@chakra-ui/react';
 import { getHomeData } from '../lib/datocms';
 import { ResponsiveImageType } from 'react-datocms';
 import Hero from '../home/components/Hero';
 import Section from '../home/components/Section';
 import { NavigationIds, SectionIds } from '../navigation/constants';
 import Projects from '../home/components/Projects';
-import { InternalLink } from '../components/Links';
+import { ExternalLink, InternalLink } from '../components/Links';
+import Email from '../components/Email';
 
-const SECTION_SPACING = 16;
+const SECTION_SPACING = 28;
 
 export const getStaticProps: GetStaticProps = async () => {
   const homeData = await getHomeData();
@@ -63,11 +64,20 @@ const Home: NextPage<HomeProps> = ({ homeData }) => {
           I don&apos;t believe in a traditional 9–5, but I believe in working in a state of high productivity and in
           resting/exercising when need to recharge; in other words, getting things done efficiently whilst having a
           balanced life. I also strive for excellence, but not by default — considering the cost of excellence is
-          important. Building a great product for half the price may be much better ROI than spending the double on
-          marginal improvements that make barely any difference to the end user.
+          important. Building a great product for half the price may be much better{' '}
+          <Tooltip label="Return on Investment" aria-label="A tooltip" bg="primary.light">
+            ROI
+          </Tooltip>{' '}
+          spending the double on marginal improvements that make barely any difference to the end user.
         </Text>
         <br />
-        <Text>My preferred tech stack is React, Next.js, Prisma, and TypeScript.</Text>
+        <Text>
+          My preferred tech stack is <ExternalLink href="https://nextjs.org/">Next.js</ExternalLink>,{' '}
+          <ExternalLink href="https://www.prisma.io/">Prisma</ExternalLink>,{' '}
+          <ExternalLink href="https://reactjs.org/">React</ExternalLink>,{' '}
+          <ExternalLink href="https://chakra-ui.com/">Chakra UI</ExternalLink>, and{' '}
+          <ExternalLink href="https://www.typescriptlang.org/">TypeScript</ExternalLink>.
+        </Text>
       </Section>
 
       <Section
@@ -80,7 +90,8 @@ const Home: NextPage<HomeProps> = ({ homeData }) => {
         <br />
         <Text>
           👨‍💻&nbsp;&nbsp;Graduated from <em>Imperial&nbsp;College&nbsp;London</em> with Distinction in{' '}
-          <em>Computing Science MSc</em> while managed to complete the Kickstart&nbsp;London startup accelerator
+          <em>Computing Science MSc</em> while managed to complete the{' '}
+          <ExternalLink href="https://www.kickstartglobal.com/">Kickstart&nbsp;London</ExternalLink> startup accelerator
           programme
         </Text>
         <br />
@@ -108,6 +119,17 @@ const Home: NextPage<HomeProps> = ({ homeData }) => {
 
       <Section heading="Blog" mt={SECTION_SPACING}>
         Coming soon!
+      </Section>
+
+      <Section id={SectionIds.CONTACT} anchorId={NavigationIds.CONTACT} heading="Get in touch" my={SECTION_SPACING}>
+        <Text>
+          Want to say hey? Got exciting project or opportunity? Want o chat about tech? Drop me a line at <Email />.
+        </Text>
+        <br />
+        <Text>
+          You can also find me on{' '}
+          <ExternalLink href="https://www.linkedin.com/in/daniel-hausner/">LinkedIn</ExternalLink>.
+        </Text>
       </Section>
     </Box>
   );

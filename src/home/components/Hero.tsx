@@ -22,18 +22,18 @@ const Hero = ({ profilePicture, anchorId, ...rest }: HeroProps) => {
   return (
     <Flex ref={ref} flexDir="column" justifyContent="center" alignItems="center">
       {anchorId && <NavAnchor id={anchorId} />}
-      <Flex flexDir="column" {...rest}>
-        <HStack h="max-content" spacing={0}>
-          <Box minW={{ base: '120px', md: '180px' }}>
-            {/* eslint-disable-next-line jsx-a11y/alt-text */}
-            <Image
-              lazyLoad={false}
-              data={profilePicture.responsiveImage}
-              pictureStyle={{ transform: 'rotate(15deg)' }}
-            />{' '}
-            {/* alt provided in data */}
-          </Box>
-          <SlideFade in offsetX={'10rem'} offsetY={'0'} transition={{ enter: { duration: 0.8, delay: 0.2 } }}>
+      <Flex flexDir="column" {...rest} overflow="hidden">
+        <SlideFade in offsetX={'10rem'} offsetY={'0'} transition={{ enter: { duration: 0.8, delay: 0.2 } }}>
+          <HStack h="max-content" spacing={0}>
+            <Box minW={{ base: '120px', md: '180px' }}>
+              {/* eslint-disable-next-line jsx-a11y/alt-text */}
+              <Image
+                lazyLoad={false}
+                data={profilePicture.responsiveImage}
+                pictureStyle={{ transform: 'rotate(15deg)' }}
+              />{' '}
+              {/* alt provided in data */}
+            </Box>
             <Box>
               <Heading fontSize={useBreakpointValue({ base: '6xl', md: '8xl' })} lineHeight="70%">
                 Daniel
@@ -43,8 +43,8 @@ const Hero = ({ profilePicture, anchorId, ...rest }: HeroProps) => {
                 I bring ideas to life with web technologies.
               </Heading>
             </Box>
-          </SlideFade>
-        </HStack>
+          </HStack>
+        </SlideFade>
         <Heading as="h2" fontWeight="medium" fontSize={{ base: 'xl', md: '2xl' }} mt={4}>
           <SlideFade in offsetX={'-5rem'} offsetY={'0'} transition={{ enter: { duration: 0.6, delay: 0.8 } }}>
             Meticulous.
