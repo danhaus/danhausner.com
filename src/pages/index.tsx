@@ -32,16 +32,16 @@ const Home: NextPage<HomeProps> = ({ homeData }) => {
   return (
     <Box fontSize="lg">
       <Head>
-        <title>I{"'"}m Daniel Hausner</title>
+        <title>Daniel Hausner — bringing ideas to life with web technologies</title>
         <meta
           name="description"
-          content="Fullstack web developer with demonstrable phobia of spaghetti code. I bring ideas to life with web technologies. Meticulous. Curious. Unconventional."
+          content="Fullstack web developer with demonstrable phobia of spaghetti code. Meticulous. Curious. Unconventional."
         />
         <meta
           property="og:description"
-          content="Fullstack web developer with demonstrable phobia of spaghetti code. I bring ideas to life with web technologies. Meticulous. Curious. Unconventional."
+          content="Fullstack web developer with demonstrable phobia of spaghetti code. Meticulous. Curious. Unconventional."
         />
-        <meta property="og:title" content="I'm Daniel Hausner" />
+        <meta property="og:title" content="Daniel Hausner — bringing ideas to life with web technologies" />
         <meta property="og:url" content="https://www.danhausner.com/" />
         <meta property="og:image" content="https://www.datocms-assets.com/54127/1633205363-ogimage.png" />
         <meta property="og:type" content="profile" />
