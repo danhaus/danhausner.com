@@ -35,6 +35,9 @@ const Home: NextPage<HomeProps> = ({ homeData }) => {
         <title>I{"'"}m Daniel Hausner</title>
         <meta
           name="description"
+          content="Fullstack web developer with demonstrable phobia of spaghetti code. I bring ideas to life with web technologies. Meticulous. Curious. Unconventional."
+        />
+        <meta
           property="og:description"
           content="Fullstack web developer with demonstrable phobia of spaghetti code. I bring ideas to life with web technologies. Meticulous. Curious. Unconventional."
         />
