@@ -47,7 +47,13 @@ const Home: NextPage<HomeProps> = ({ homeData }) => {
         <meta property="og:type" content="profile" />
         <meta property="profile:first_name" content="Daniel" />
         <meta property="profile:last_name" content="Hausner" />
-        {/*<link rel="icon" href="/favicon.ico" />*/}
+        <link rel="icon" sizes="16x16 32x32 48x48" href="https://www.datocms-assets.com/54127/1634587622-favicon.ico" />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="196x196"
+          href="https://www.datocms-assets.com/54127/1634587618-favicon-192x192.png"
+        />
       </Head>
 
       <Hero id={SectionIds.HOME} anchorId={NavigationIds.HOME} profilePicture={profilePicture} />
