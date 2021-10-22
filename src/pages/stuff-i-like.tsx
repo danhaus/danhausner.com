@@ -16,12 +16,12 @@ const StuffILike: NextPage = () => {
         />
       </Head>
 
-      <Heading as="h1" size={'2xl'} mt={10}>
+      <Heading as="h1" size={'4xl'} my={10}>
         Stuff I like
       </Heading>
 
       <Section
-        heading="Software development"
+        heading="Software dev"
         items={[
           <ExternalLink key="next" href="https://nextjs.org/">
             Next.js
@@ -48,7 +48,7 @@ const StuffILike: NextPage = () => {
       />
 
       <Section
-        heading="Health & nutrition products"
+        heading="Health & nutrition"
         items={[
           <ExternalLink key="heights" href="https://www.yourheights.com/">
             Heights

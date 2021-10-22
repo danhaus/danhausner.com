@@ -10,7 +10,7 @@ interface SectionProps extends BoxProps {
 const Section = ({ heading, items, ...rest }: SectionProps) => {
   return (
     <Box as="section" {...rest} mt={12}>
-      <Heading mb={6} size={'lg'}>
+      <Heading mb={6} size={'2xl'}>
         {heading}
       </Heading>
       {items.map((item, index) => (
