@@ -21,7 +21,7 @@ const Projects = () => {
         experts to monetise their knowledge via paid video consultations. The startup recently{' '}
         <ExternalLink href="https://www.crunchbase.com/organization/pensight">raised a seed of $3M</ExternalLink>, and
         I&apos;m one of the first developers to join the{' '}
-        <ExternalLink href="https://pensight.com/team">top notch team</ExternalLink>, which includes the founder of
+        <ExternalLink href="https://pensight.com/team">top notch team</ExternalLink> that includes the founder of
         Eventbrite.
       </Item>
       <Item id={'aimtal'} heading={'Aimtal'}>
