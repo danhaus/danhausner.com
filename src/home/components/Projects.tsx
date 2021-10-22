@@ -16,6 +16,14 @@ import { ExternalLink } from '../../components/Links';
 const Projects = () => {
   return (
     <Accordion allowToggle defaultIndex={0}>
+      <Item id={'pensight'} heading={'Pensigh'}>
+        <ExternalLink href="http://pensight.com/">Pensight</ExternalLink>, based in London, is a platform that enables
+        experts to monetise their knowledge via paid video consultations. The startup recently{' '}
+        <ExternalLink href="https://www.crunchbase.com/organization/pensight">raised a seed of $3M</ExternalLink>, and
+        I&apos;m one of the first developers to join the{' '}
+        <ExternalLink href="https://pensight.com/team">top notch team</ExternalLink>, which includes the founder of
+        Eventbrite.
+      </Item>
       <Item id={'aimtal'} heading={'Aimtal'}>
         <ExternalLink href="http://aimtal.com/">Aimtal</ExternalLink> is a Boston-base digital marketing agency, whose
         clients include companies like Trello and Confluence. I helped them to get technical things right: web
