@@ -9,8 +9,7 @@ import { NavigationIds, SectionIds } from '../navigation/constants';
 import Projects from '../home/components/Projects';
 import { ExternalLink, InternalLink } from '../components/Links';
 import Email from '../components/Email';
-
-const SECTION_SPACING = 28;
+import { SECTION_SPACING } from '../components/Layout';
 
 export const getStaticProps: GetStaticProps = async () => {
   const homeData = await getHomeData();
@@ -140,7 +139,7 @@ const Home: NextPage<HomeProps> = ({ homeData }) => {
         Coming soon!
       </Section>
 
-      <Section id={SectionIds.CONTACT} anchorId={NavigationIds.CONTACT} heading="Get in touch" my={SECTION_SPACING}>
+      <Section id={SectionIds.CONTACT} anchorId={NavigationIds.CONTACT} heading="Get in touch" mt={SECTION_SPACING}>
         <Text>
           Want to say hey? Got exciting project or opportunity? Want o chat about tech? Drop me a line at <Email />.
         </Text>
