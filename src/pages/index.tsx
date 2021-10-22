@@ -109,7 +109,7 @@ const Home: NextPage<HomeProps> = ({ homeData }) => {
         <br />
         <Text>
           👨‍💻&nbsp;&nbsp;Graduated from <em>Imperial&nbsp;College&nbsp;London</em> with Distinction in{' '}
-          <em>Computing Science MSc</em> while managed to complete the{' '}
+          <em>Computing Science MSc</em> while managing to complete the{' '}
           <ExternalLink href="https://www.kickstartglobal.com/">Kickstart&nbsp;London</ExternalLink> startup accelerator
           programme
         </Text>
