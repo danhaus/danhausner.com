@@ -42,7 +42,7 @@ const Home: NextPage<HomeProps> = ({ homeData }) => {
         />
         <meta property="og:title" content="Daniel Hausner — bringing ideas to life with web technologies" />
         <meta property="og:url" content="https://www.danhausner.com/" />
-        <meta property="og:image" content="https://www.datocms-assets.com/54127/1633205363-ogimage.png" />
+        <meta property="og:image" content="https://www.datocms-assets.com/54127/1633207499-ogimage.png" />
         <meta property="og:type" content="profile" />
         <meta property="profile:first_name" content="Daniel" />
         <meta property="profile:last_name" content="Hausner" />
