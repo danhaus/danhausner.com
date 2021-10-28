@@ -141,7 +141,7 @@ const Home: NextPage<HomeProps> = ({ homeData }) => {
 
       <Section id={SectionIds.CONTACT} anchorId={NavigationIds.CONTACT} heading="Get in touch" mt={SECTION_SPACING}>
         <Text>
-          Want to say hey? Got exciting project or opportunity? Want o chat about tech? Drop me a line at <Email />.
+          Want to say hey? Got exciting project or opportunity? Want to chat about tech? Drop me a line at <Email />.
         </Text>
         <br />
         <Text>
