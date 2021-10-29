@@ -16,7 +16,7 @@ import { ExternalLink } from '../../components/Links';
 const Projects = () => {
   return (
     <Accordion allowToggle defaultIndex={0}>
-      <Item id={'pensight'} heading={'Pensigh'}>
+      <Item id={'pensight'} heading={'Pensight'}>
         <ExternalLink href="http://pensight.com/">Pensight</ExternalLink>, based in London, is a platform that enables
         experts to monetise their knowledge via paid video consultations. The startup recently{' '}
         <ExternalLink href="https://www.crunchbase.com/organization/pensight">raised a seed of $3M</ExternalLink>, and
