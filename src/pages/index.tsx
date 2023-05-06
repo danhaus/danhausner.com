@@ -135,17 +135,13 @@ const Home: NextPage<HomeProps> = ({ homeData }) => {
         my favourite products, tools, and books.
       </Section>
 
-      <Section heading="Blog" mt={SECTION_SPACING}>
-        Coming soon!
-      </Section>
-
       <Section id={SectionIds.CONTACT} anchorId={NavigationIds.CONTACT} heading="Get in touch" mt={SECTION_SPACING}>
         <Text>
           Want to say hey? Got exciting project or opportunity? Want to chat about tech? Drop me a line at <Email />.
         </Text>
         <br />
         <Text>
-          You can also find me on{' '}
+          You can also find me on <ExternalLink href="https://twitter.com/danhausner">Twitter</ExternalLink> and{' '}
           <ExternalLink href="https://www.linkedin.com/in/daniel-hausner/">LinkedIn</ExternalLink>.
         </Text>
       </Section>
