@@ -145,7 +145,7 @@ const Home: NextPage<HomeProps> = ({ homeData }) => {
         </Text>
         <br />
         <Text>
-          You can also find me on{' '}
+          You can also find me on <ExternalLink href="https://twitter.com/danhausner">Twitter</ExternalLink> and{' '}
           <ExternalLink href="https://www.linkedin.com/in/daniel-hausner/">LinkedIn</ExternalLink>.
         </Text>
       </Section>
